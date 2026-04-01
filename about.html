@@ -41,6 +41,18 @@
 }
 </script>
 
+<!-- BreadcrumbList -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://redbarnwoodturning.com/" },
+    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://redbarnwoodturning.com/about.html" }
+  ]
+}
+</script>
+
 <!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -154,39 +166,39 @@
       <p class="section-subtitle">Stories about the work, the craft, and the wood that shapes it all.</p>
     </div>
     <div class="blog-grid reveal">
-      <div class="blog-card" role="button" tabindex="0" data-blog-id="blog-1" aria-label="Why the Wood Matters More Than You Think">
+      <a href="blog-why-wood-matters.html" class="blog-card" aria-label="Why the Wood Matters More Than You Think">
         <div class="blog-card-image">
-          <img src="gallery-oak-grain.jpg" alt="" loading="lazy" width="400" height="300">
+          <img src="gallery-oak-grain.jpg" alt="Close-up of white oak grain pattern" loading="lazy" width="400" height="300">
         </div>
         <div class="blog-card-body">
           <div class="blog-card-date">March 2026</div>
           <h3>Why the Wood Matters More Than You Think</h3>
           <p>People ask me all the time: what makes one bowl different from another? The answer almost always starts with the wood.</p>
         </div>
-      </div>
-      <div class="blog-card" role="button" tabindex="0" data-blog-id="blog-2" aria-label="Anatomy of a Build: The Oak Kitchen Table">
+      </a>
+      <a href="blog-oak-kitchen-table.html" class="blog-card" aria-label="Anatomy of a Build: The Oak Kitchen Table">
         <div class="blog-card-image">
-          <img src="gallery-table-top.jpg" alt="" loading="lazy" width="400" height="300">
+          <img src="gallery-table-top.jpg" alt="Hand-planed oak kitchen table surface" loading="lazy" width="400" height="300">
         </div>
         <div class="blog-card-body">
           <div class="blog-card-date">February 2026</div>
           <h3>Anatomy of a Build: The Oak Kitchen Table</h3>
           <p>A few months back I got a call from a customer in Michigan. He wanted a kitchen table — something big enough for the whole family.</p>
         </div>
-      </div>
-      <div class="blog-card" role="button" tabindex="0" data-blog-id="blog-3" aria-label="How to Care for Your Handmade Wood Piece">
+      </a>
+      <a href="blog-wood-care.html" class="blog-card" aria-label="How to Care for Your Handmade Wood Piece">
         <div class="blog-card-image">
-          <img src="gallery-bowl-stand.jpg" alt="" loading="lazy" width="400" height="300">
+          <img src="gallery-bowl-stand.jpg" alt="Turned wood bowl on a walnut stand" loading="lazy" width="400" height="300">
         </div>
         <div class="blog-card-body">
           <div class="blog-card-date">January 2026</div>
           <h3>How to Care for Your Handmade Wood Piece</h3>
           <p>One of the most common questions I get after delivering a piece is: how do I take care of this? The good news is simple.</p>
         </div>
-      </div>
-      <div class="blog-card" role="button" tabindex="0" data-blog-id="blog-4" aria-label="What Is Wood Turning, Anyway?">
+      </a>
+      <a href="blog-what-is-wood-turning.html" class="blog-card" aria-label="What Is Wood Turning, Anyway?">
         <div class="blog-card-image">
-          <img src="craft-bowls.jpg" alt="" loading="lazy" width="400" height="300">
+          <img src="craft-bowls.jpg" alt="Collection of hand-turned wooden bowls" loading="lazy" width="400" height="300">
         </div>
         <div class="blog-card-body">
           <div class="blog-card-date">December 2025</div>
@@ -197,21 +209,6 @@
     </div>
   </div>
 </section>
-
-<!-- BLOG EXPANDED OVERLAY -->
-<div class="blog-expanded-overlay" id="blogOverlay" role="dialog" aria-modal="true" aria-hidden="true">
-  <div class="blog-expanded-content" role="document">
-    <button class="blog-close-btn" id="blogCloseBtn" aria-label="Close blog post">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <line x1="18" y1="6" x2="6" y2="18"></line>
-        <line x1="6" y1="6" x2="18" y2="18"></line>
-      </svg>
-    </button>
-    <article id="blogContent">
-      <!-- Content inserted by JavaScript -->
-    </article>
-  </div>
-</div>
 
 <!-- CTA SECTION -->
 <section class="cta-section">
@@ -241,154 +238,6 @@
 </footer>
 
 <script>
-  // ---- Blog data ----
-  const blogPosts = {
-    'blog-1': {
-      title: 'Why the Wood Matters More Than You Think',
-      date: 'March 2026',
-      content: `
-        <h2>Why the Wood Matters More Than You Think</h2>
-        <p>People ask me all the time: what makes one bowl different from another? The answer almost always starts with the wood.</p>
-        <p>When I walk into my shop and pick up a rough blank, I'm not just grabbing the nearest piece. I'm reading it — looking at the grain direction, checking for tension in the fibers, noticing where a branch used to be. Every piece of wood has a story written into its rings, and my job is to figure out how to tell that story.</p>
-
-        <h3>Not All Hardwoods Are Created Equal</h3>
-        <p>Take cherry and walnut, two of the most popular species I work with. Cherry starts out pale and almost pinkish, but give it a year of sunlight and it deepens into a rich, warm amber. It's forgiving on the lathe and finishes like silk. Walnut, on the other hand, comes off the tree already dark and dramatic. The grain is bolder, the contrasts sharper. It demands attention.</p>
-        <p>Then there's spalted maple — wood that's been partially colonized by fungi, leaving behind these wild, ink-like lines running through the grain. It's unpredictable and can be tricky to turn because the soft spots want to tear out. But when it works? There's nothing else like it.</p>
-
-        <h3>Local Wood, Local Character</h3>
-        <p>Most of the wood I use comes from right here in Knox County and the surrounding area. Fallen trees from storms, trees taken down for construction, logs that would otherwise end up as firewood or mulch. There's something satisfying about giving a 100-year-old oak that came down in someone's backyard a second life as a kitchen table.</p>
-        <p>Ohio grows incredible hardwoods — red and white oak, black walnut, sugar maple, ash, cherry. Working with local species means I know the wood. I know how it moves when it dries, how it responds to the tools, and what kind of finish will bring out the best in it.</p>
-
-        <h3>The Conversation Between Maker and Material</h3>
-        <p>Here's the thing nobody tells you about woodworking: you don't fully control the outcome. The wood has a say. A hidden crack might redirect your design. A knot in just the right spot might become the centerpiece of the whole piece. The best work happens when you stop fighting the material and start working with it.</p>
-        <p>That's what I love about this craft. Every piece of wood is a collaboration.</p>
-      `
-    },
-    'blog-2': {
-      title: 'Anatomy of a Build: The Oak Kitchen Table',
-      date: 'February 2026',
-      content: `
-        <h2>Anatomy of a Build: The Oak Kitchen Table</h2>
-        <p>A few months back I got a call from a customer in Michigan. He wanted a kitchen table — something big enough for the whole family, built from white oak, with a natural look that still felt refined. No stain, just the wood speaking for itself. That's my kind of project.</p>
-        <p>I thought I'd walk through how a piece like this comes together, from the first phone call to the final delivery.</p>
-
-        <h3>Finding the Right Slabs</h3>
-        <p>For a table this size, you need wide boards, and they need to come from the same tree or at least the same species and similar age. Consistency matters. I spent about two weeks sourcing white oak slabs with tight, straight grain and minimal sapwood. I wanted boards thick enough to give the table real presence — a full inch and a quarter after final surfacing.</p>
-        <p>I ended up with four slabs from a mill about 40 minutes south of here. They'd been air-drying in the kiln for over a year — right around 7% moisture content, which is exactly where you want it for indoor furniture.</p>
-
-        <h3>Joinery and Glue-Up</h3>
-        <p>The tabletop is edge-joined — four boards glued side by side. Sounds simple, but getting those joints dead flat and invisible takes a lot of handwork. I joint the edges by hand with a No. 7 plane, checking the fit with a straightedge until there's no light peeking through. When the joint is that tight, the seam essentially disappears.</p>
-        <p>After glue-up, I let the top sit for a full week before surfacing. Wood moves, especially big panels. Rushing this step is how you end up with a table that cups or twists down the road.</p>
-
-        <h3>The Base</h3>
-        <p>The customer wanted something sturdy but not heavy-looking. I went with a trestle-style base in the same white oak — thick, chamfered legs connected by a long stretcher with through-tenon joinery. No metal fasteners on the base at all. The joints are drawbored, meaning a wooden peg locks the tenon in place. It's old-school and incredibly strong.</p>
-
-        <h3>Finishing</h3>
-        <p>This is where patience pays off. I sanded the top through six grits, starting at 80 and working up to 320. Then I applied a hardwax oil finish — three coats, hand-rubbed, with 24 hours between each coat. Hardwax oil is my go-to for tables because it's food-safe, brings out the grain beautifully, and can be spot-repaired if the surface gets scratched years down the line.</p>
-        <p>The finished top has this warm, honey tone with the cathedral grain pattern that white oak is known for. Under the right light, it almost glows.</p>
-
-        <h3>Delivery Day</h3>
-        <p>I delivered the table myself — strapped it into the truck, drove it up to Michigan, and set it up in the kitchen. Watching someone see their piece for the first time never gets old. The customer ran his hand across the top and said he could feel the grain under his fingertips. That's the whole point.</p>
-      `
-    },
-    'blog-3': {
-      title: 'How to Care for Your Handmade Wood Piece',
-      date: 'January 2026',
-      content: `
-        <h2>How to Care for Your Handmade Wood Piece</h2>
-        <p>One of the most common questions I get after delivering a piece is: how do I take care of this? The good news is that well-made wood furniture and turned pieces are pretty low-maintenance. But a few simple habits will keep your piece looking great for decades.</p>
-
-        <h3>For Tabletops and Furniture</h3>
-        <p>If your piece has a hardwax oil finish (which most of my furniture does), day-to-day care is easy. Wipe up spills when they happen, clean with a damp cloth, and avoid leaving wet glasses sitting directly on the surface. A coaster goes a long way.</p>
-        <p>Once or twice a year, give the surface a light refresh. I recommend applying a thin coat of the same hardwax oil used in the original finish. Wipe it on with a lint-free cloth, let it soak in for 20 minutes, then buff off the excess. That's it. The whole process takes about 30 minutes and keeps the wood nourished and protected.</p>
-        <p>If you get a scratch, don't panic. Light scratches can usually be buffed out with a bit of oil and a soft cloth. Deeper ones can be sanded locally with fine-grit sandpaper and re-oiled. This is one of the big advantages of oil finishes over polyurethane — you can do spot repairs without refinishing the entire surface.</p>
-
-        <h3>For Turned Bowls and Vessels</h3>
-        <p>Bowls that are used for dry goods (fruit, bread, keys on the entry table) need very little care. Dust them occasionally and give them an oil treatment once a year or so. I use a food-safe mineral oil or a beeswax and mineral oil blend.</p>
-        <p>One important rule: never put a turned wood bowl in the dishwasher. The heat and water will warp and crack it faster than anything. Hand wash with mild soap and dry immediately if it gets wet. And never let it soak.</p>
-
-        <h3>For Pens and Small Turned Items</h3>
-        <p>These are the easiest to care for. Most of my pens have a CA (cyanoacrylate) finish, which is essentially a super-hard, clear coating that's very durable. Just use them. If they start to look a little dull after years of handling, a quick buff with a microfiber cloth brings the shine right back.</p>
-
-        <h3>The Enemy: Extremes</h3>
-        <p>The single biggest thing to remember about wood is that it doesn't like extremes. Don't put a handmade table next to a heating vent. Don't store a bowl in a damp basement. Don't leave any wood piece in direct sunlight all day every day. Wood expands and contracts with humidity changes — that's normal and expected. But extreme swings in temperature or moisture will stress the fibers and eventually cause problems.</p>
-        <p>Treat your piece like you'd treat a good pair of leather boots: use it, enjoy it, and give it a little love now and then. It'll reward you for it.</p>
-      `
-    },
-    'blog-4': {
-      title: 'What Is Wood Turning, Anyway?',
-      date: 'December 2025',
-      content: `
-        <h2>What Is Wood Turning, Anyway?</h2>
-        <p>If you've found your way to this site, you probably have at least a rough idea of what woodturning is. But I'm surprised how often people — even folks who are into woodworking — don't really know the details. So let's break it down.</p>
-
-        <h3>The Basic Idea</h3>
-        <p>Woodturning is the craft of shaping wood while it spins on a lathe. Think of it like pottery on a wheel, but instead of clay, you're working with a solid piece of wood, and instead of your hands, you're using sharp steel tools to cut and shape the material.</p>
-        <p>The lathe spins the wood at anywhere from a few hundred to a few thousand RPM, depending on the size of the piece. A large bowl blank might spin at 600 RPM. A small pen blank might run at 2,500+. The turner holds a gouge, skew chisel, or other tool against a rest and carefully removes material until the desired shape emerges.</p>
-
-        <h3>It's Subtractive, and That's What Makes It Exciting</h3>
-        <p>Unlike carpentry, where you're assembling parts, turning is purely subtractive. You start with more wood than you need and cut away everything that isn't the finished piece. There's no undo button. If you cut too deep or catch the edge wrong, you either adapt the design or start over.</p>
-        <p>This is what gives turned pieces their character. Every decision is final, and the best turners learn to work with the wood's imperfections rather than against them. A void where a branch rotted away becomes a design feature. An off-center grain pattern becomes the focal point.</p>
-
-        <h3>What Can You Make on a Lathe?</h3>
-        <p>More than you'd think. The obvious ones are bowls, cups, vases, and platters. But turners also make furniture legs, staircase balusters, bottle stoppers, drawer pulls, tool handles, ornaments, and art pieces that push the boundaries of what wood can do.</p>
-        <p>Personally, I love the range. In a single week I might rough-turn a big salad bowl from a fresh maple log, then switch to crafting a set of delicate pen blanks from stabilized burl. The variety keeps things interesting and keeps my skills sharp.</p>
-
-        <h3>Why It Matters in a Machine-Made World</h3>
-        <p>You can buy a bowl at any home goods store for $15. It'll work fine. So why does handturning matter?</p>
-        <p>Because there's a difference between something that was manufactured and something that was made. A hand-turned bowl carries the marks of its creation — the subtle tool marks, the way the grain was oriented by a human making decisions in real time, the finish applied by hand. It's an object with a story, and that story connects the person who uses it to the person who made it.</p>
-        <p>In a world full of identical, mass-produced objects, I think there's real value in owning something that's one of a kind. That's what keeps me walking into the shop every morning.</p>
-      `
-    }
-  };
-
-  // ---- Blog card click handler ----
-  const blogCards = document.querySelectorAll('.blog-card');
-  const blogOverlay = document.getElementById('blogOverlay');
-  const blogContent = document.getElementById('blogContent');
-  const blogCloseBtn = document.getElementById('blogCloseBtn');
-
-  blogCards.forEach(card => {
-    card.addEventListener('click', () => {
-      const blogId = card.getAttribute('data-blog-id');
-      const post = blogPosts[blogId];
-      if (post) {
-        blogContent.innerHTML = post.content;
-        blogOverlay.setAttribute('aria-hidden', 'false');
-        blogOverlay.classList.add('show');
-        document.body.style.overflow = 'hidden';
-      }
-    });
-
-    card.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        card.click();
-      }
-    });
-  });
-
-  // ---- Close blog overlay ----
-  function closeBlogOverlay() {
-    blogOverlay.setAttribute('aria-hidden', 'true');
-    blogOverlay.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-
-  blogCloseBtn.addEventListener('click', closeBlogOverlay);
-
-  blogOverlay.addEventListener('click', (e) => {
-    if (e.target === blogOverlay) {
-      closeBlogOverlay();
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && blogOverlay.classList.contains('show')) {
-      closeBlogOverlay();
-    }
-  });
-
   // ---- Nav scroll effect ----
   const nav = document.getElementById('nav');
   let ticking = false;
