@@ -843,6 +843,9 @@ footer {
 .workshop-banner-inner {
   position: relative; max-height: 480px; overflow: hidden;
 }
+.workshop-banner-inner picture {
+  display: block; height: 480px;
+}
 .workshop-banner-img {
   width: 100%; height: 480px; object-fit: cover;
   display: block; opacity: 0.85;
