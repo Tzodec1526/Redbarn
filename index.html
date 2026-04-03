@@ -78,6 +78,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
 
+<!-- Favicon & Theme -->
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#8B2500">
+
 <!-- CSS -->
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -188,12 +192,12 @@
 </section>
 
 <!-- FROM THE WORKSHOP -->
-<section style="padding: 0; background: var(--charcoal);">
-  <div class="reveal" style="position: relative; max-height: 480px; overflow: hidden;">
-    <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations lined up in the Redbarn workshop with the Redbarn Wood Turning banner" loading="lazy" style="width: 100%; height: 480px; object-fit: cover; display: block; opacity: 0.85;">
-    <div style="position: absolute; bottom: 0; left: 0; right: 0; padding: 2.5rem 2rem; background: linear-gradient(transparent, rgba(0,0,0,0.7));">
-      <p style="font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 600; color: #fff; margin: 0; max-width: 600px;">From the workshop in Mount Vernon, Ohio.</p>
-      <p style="font-size: 0.95rem; color: rgba(255,255,255,0.75); margin: 0.5rem 0 0;">Every piece built by hand — one at a time.</p>
+<section class="workshop-banner">
+  <div class="workshop-banner-inner reveal">
+    <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations lined up in the Redbarn workshop with the Redbarn Wood Turning banner" loading="lazy" class="workshop-banner-img">
+    <div class="workshop-banner-overlay">
+      <p class="workshop-banner-title">From the workshop in Mount Vernon, Ohio.</p>
+      <p class="workshop-banner-sub">Every piece built by hand — one at a time.</p>
     </div>
   </div>
 </section>
@@ -286,63 +290,7 @@
   </div>
 </footer>
 
-<script>
-  // ---- Nav scroll effect ----
-  const nav = document.getElementById('nav');
-  let ticking = false;
-  window.addEventListener('scroll', () => {
-    if (!ticking) {
-      requestAnimationFrame(() => {
-        nav.classList.toggle('scrolled', window.scrollY > 50);
-        ticking = false;
-      });
-      ticking = true;
-    }
-  }, { passive: true });
-
-  // ---- Mobile nav ----
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
-  const overlay = document.getElementById('mobileOverlay');
-
-  function closeNav() {
-    navLinks.classList.remove('show');
-    overlay.classList.remove('show');
-    navToggle.classList.remove('active');
-    navToggle.setAttribute('aria-expanded', 'false');
-    document.body.style.overflow = '';
-  }
-
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.contains('show');
-    if (isOpen) {
-      closeNav();
-    } else {
-      navLinks.classList.add('show');
-      overlay.classList.add('show');
-      navToggle.classList.add('active');
-      navToggle.setAttribute('aria-expanded', 'true');
-      document.body.style.overflow = 'hidden';
-    }
-  });
-
-  overlay.addEventListener('click', closeNav);
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', closeNav);
-  });
-
-  // ---- Scroll reveal ----
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('visible');
-        revealObserver.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-
-  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
-</script>
+<script src="script.js"></script>
 
 </body>
 </html>
