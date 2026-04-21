@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+  <title>Redbarn Wood Turning Blog</title>
+  <link>https://redbarnwoodturning.com/</link>
+  <description>Notes on wood and craft from Michael Cedoz's workshop in Mount Vernon, Ohio.</description>
+  <language>en-us</language>
+  <atom:link href="https://redbarnwoodturning.com/feed.xml" rel="self" type="application/rss+xml" />
+  <lastBuildDate>Tue, 21 Apr 2026 00:00:00 -0400</lastBuildDate>
+
+  <item>
+    <title>From Fallen Tree to Finished Bowl: The 18-Month Journey of a Walnut</title>
+    <link>https://redbarnwoodturning.com/blog-fallen-tree-to-bowl.html</link>
+    <guid isPermaLink="true">https://redbarnwoodturning.com/blog-fallen-tree-to-bowl.html</guid>
+    <pubDate>Tue, 21 Apr 2026 00:00:00 -0400</pubDate>
+    <author>michael@redbarnwoodturning.com (Michael Cedoz)</author>
+    <description>Follow a single black walnut from a Knox County backyard to a finished bowl. How wood drying, rough turning, and finishing work — and why good bowls take 12 to 18 months.</description>
+  </item>
+
+  <item>
+    <title>Why the Wood Matters More Than You Think</title>
+    <link>https://redbarnwoodturning.com/blog-why-wood-matters.html</link>
+    <guid isPermaLink="true">https://redbarnwoodturning.com/blog-why-wood-matters.html</guid>
+    <pubDate>Sun, 01 Mar 2026 00:00:00 -0500</pubDate>
+    <author>michael@redbarnwoodturning.com (Michael Cedoz)</author>
+    <description>What makes one bowl different from another? The answer starts with the wood. How species, sourcing, and grain shape every piece.</description>
+  </item>
+
+  <item>
+    <title>Anatomy of a Build: The Oak Kitchen Table</title>
+    <link>https://redbarnwoodturning.com/blog-oak-kitchen-table.html</link>
+    <guid isPermaLink="true">https://redbarnwoodturning.com/blog-oak-kitchen-table.html</guid>
+    <pubDate>Sun, 01 Feb 2026 00:00:00 -0500</pubDate>
+    <author>michael@redbarnwoodturning.com (Michael Cedoz)</author>
+    <description>How a custom white oak kitchen table comes together — from sourcing slabs to hand-cut joinery to hardwax oil finish.</description>
+  </item>
+
+  <item>
+    <title>How to Care for Your Handmade Wood Piece</title>
+    <link>https://redbarnwoodturning.com/blog-wood-care.html</link>
+    <guid isPermaLink="true">https://redbarnwoodturning.com/blog-wood-care.html</guid>
+    <pubDate>Thu, 01 Jan 2026 00:00:00 -0500</pubDate>
+    <author>michael@redbarnwoodturning.com (Michael Cedoz)</author>
+    <description>Simple care tips for handmade wood furniture, turned bowls, and pens. How to maintain hardwax oil finishes, prevent damage, and keep your piece looking great.</description>
+  </item>
+
+  <item>
+    <title>What Is Wood Turning, Anyway?</title>
+    <link>https://redbarnwoodturning.com/blog-what-is-wood-turning.html</link>
+    <guid isPermaLink="true">https://redbarnwoodturning.com/blog-what-is-wood-turning.html</guid>
+    <pubDate>Mon, 01 Dec 2025 00:00:00 -0500</pubDate>
+    <author>michael@redbarnwoodturning.com (Michael Cedoz)</author>
+    <description>An introduction to wood turning — what it is, what it isn't, and why it's not the same as woodworking in general.</description>
+  </item>
+</channel>
+</rss>
