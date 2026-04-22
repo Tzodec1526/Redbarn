@@ -64,10 +64,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -80,86 +85,103 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<section class="page-header" id="main">
-  <div class="page-header-inner">
-    <div class="page-header-tag">Blog</div>
-    <h1 class="page-header-title">How to Care for Your Handmade Wood Piece</h1>
-    <p class="page-header-subtitle">January 2026 · Michael Cedoz</p>
-  </div>
-</section>
-
-<section style="background-color: var(--warm-cream); padding: 4rem 2rem;">
-  <article class="section-inner reveal" style="max-width: 720px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: var(--text-secondary);">
-    <picture>
-      <source srcset="gallery-bowl-stand.webp" type="image/webp">
-      <img src="gallery-bowl-stand.jpg" alt="Turned wood bowl on a walnut stand" loading="lazy" style="width: 100%; border-radius: 12px; margin-bottom: 2rem;">
-    </picture>
-
-    <p>One of the most common questions I get after delivering a piece is: how do I take care of this? The good news is that well-made wood furniture and turned pieces are pretty low-maintenance. But a few simple habits will keep your piece looking great for decades.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">For Tabletops and Furniture</h2>
-    <p>If your piece has a hardwax oil finish (which most of my furniture does), day-to-day care is easy. Wipe up spills when they happen, clean with a damp cloth, and avoid leaving wet glasses sitting directly on the surface. A coaster goes a long way.</p>
-    <p>Once or twice a year, give the surface a light refresh. I recommend applying a thin coat of the same hardwax oil used in the original finish. Wipe it on with a lint-free cloth, let it soak in for 20 minutes, then buff off the excess. That's it. The whole process takes about 30 minutes and keeps the wood nourished and protected.</p>
-    <p>If you get a scratch, don't panic. Light scratches can usually be buffed out with a bit of oil and a soft cloth. Deeper ones can be sanded locally with fine-grit sandpaper and re-oiled. This is one of the big advantages of oil finishes over polyurethane — you can do spot repairs without refinishing the entire surface.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">For Turned Bowls and Vessels</h2>
-    <p>Bowls that are used for dry goods (fruit, bread, keys on the entry table) need very little care. Dust them occasionally and give them an oil treatment once a year or so. I use a food-safe mineral oil or a beeswax and mineral oil blend.</p>
-    <p>One important rule: never put a turned wood bowl in the dishwasher. The heat and water will warp and crack it faster than anything. Hand wash with mild soap and dry immediately if it gets wet. And never let it soak.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">For Pens and Small Turned Items</h2>
-    <p>These are the easiest to care for. Most of my pens have a CA (cyanoacrylate) finish, which is essentially a super-hard, clear coating that's very durable. Just use them. If they start to look a little dull after years of handling, a quick buff with a microfiber cloth brings the shine right back.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">The Enemy: Extremes</h2>
-    <p>The single biggest thing to remember about wood is that it doesn't like extremes. Don't put a handmade table next to a heating vent. Don't store a bowl in a damp basement. Don't leave any wood piece in direct sunlight all day every day. Wood expands and contracts with humidity changes — that's normal and expected. But extreme swings in temperature or moisture will stress the fibers and eventually cause problems.</p>
-    <p>Treat your piece like you'd treat a good pair of leather boots: use it, enjoy it, and give it a little love now and then. It'll reward you for it.</p>
-
-    <p style="margin-top: 3rem;"><a href="about.html" style="color: var(--barn-red); text-decoration: underline;">← Back to About</a></p>
-  </article>
-</section>
-
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-content reveal">
-      <h2>Let's talk about your next piece</h2>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
       <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-header">
+      <span class="mono reveal">&sect; Journal &mdash; Living with wood</span>
+      <h1 class="reveal">How to <em>care</em> for your handmade wood piece.</h1>
+      <p class="lede reveal">January 2026 &middot; Michael Cedoz</p>
+    </section>
+
+    <section class="article">
+      <div class="article-body reveal">
+        <picture>
+          <source srcset="gallery-bowl-stand.webp" type="image/webp">
+          <img src="gallery-bowl-stand.jpg" alt="Turned wood bowl on a walnut stand" loading="lazy">
+        </picture>
+
+        <p class="article-lede">One of the most common questions I get after delivering a piece is: how do I take care of this? The good news is that well-made wood furniture and turned pieces are pretty low-maintenance. But a few simple habits will keep your piece looking great for decades.</p>
+
+        <h2>For tabletops and furniture</h2>
+        <p>If your piece has a hardwax oil finish (which most of my furniture does), day-to-day care is easy. Wipe up spills when they happen, clean with a damp cloth, and avoid leaving wet glasses sitting directly on the surface. A coaster goes a long way.</p>
+        <p>Once or twice a year, give the surface a light refresh. I recommend applying a thin coat of the same hardwax oil used in the original finish. Wipe it on with a lint-free cloth, let it soak in for 20 minutes, then buff off the excess. That's it. The whole process takes about 30 minutes and keeps the wood nourished and protected.</p>
+        <p>If you get a scratch, don't panic. Light scratches can usually be buffed out with a bit of oil and a soft cloth. Deeper ones can be sanded locally with fine-grit sandpaper and re-oiled. This is one of the big advantages of oil finishes over polyurethane &mdash; you can do spot repairs without refinishing the entire surface.</p>
+
+        <h2>For turned bowls and vessels</h2>
+        <p>Bowls that are used for dry goods (fruit, bread, keys on the entry table) need very little care. Dust them occasionally and give them an oil treatment once a year or so. I use a food-safe mineral oil or a beeswax and mineral oil blend.</p>
+        <p>One important rule: never put a turned wood bowl in the dishwasher. The heat and water will warp and crack it faster than anything. Hand wash with mild soap and dry immediately if it gets wet. And never let it soak.</p>
+
+        <h2>For pens and small turned items</h2>
+        <p>These are the easiest to care for. Most of my pens have a CA (cyanoacrylate) finish, which is essentially a super-hard, clear coating that's very durable. Just use them. If they start to look a little dull after years of handling, a quick buff with a microfiber cloth brings the shine right back.</p>
+
+        <h2>The enemy: extremes</h2>
+        <p>The single biggest thing to remember about wood is that it doesn't like extremes. Don't put a handmade table next to a heating vent. Don't store a bowl in a damp basement. Don't leave any wood piece in direct sunlight all day every day. Wood expands and contracts with humidity changes &mdash; that's normal and expected. But extreme swings in temperature or moisture will stress the fibers and eventually cause problems.</p>
+        <p>Treat your piece like you'd treat a good pair of leather boots: use it, enjoy it, and give it a little love now and then. It'll reward you for it.</p>
+      </div>
+
+      <div class="article-nav">
+        <a href="about.html#journal">&larr; All essays</a>
+        <a href="contact.html">Questions about a piece? &rarr;</a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="inner">
+        <div>
+          <span class="mono">&sect; Correspondence</span>
+          <h2>Tell me about the <em>tree,</em><br>or the <span class="barn">room</span> it's headed for.</h2>
+        </div>
+        <div class="side reveal">
+          <p>Most pieces begin with an email &mdash; a photo of a room, a rough dimension, a story about someone the piece is for.</p>
+          <a class="btn" href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 

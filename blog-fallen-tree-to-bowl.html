@@ -68,7 +68,7 @@
   "inLanguage": "en-US",
   "speakable": {
     "@type": "SpeakableSpecification",
-    "cssSelector": [".page-header-title", ".article-lede", ".article-body h2"]
+    "cssSelector": [".page-header h1", ".article-lede", ".article-body h2"]
   }
 }
 </script>
@@ -86,10 +86,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- RSS -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -104,102 +109,118 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<section class="page-header" id="main">
-  <div class="page-header-inner">
-    <div class="page-header-tag">Blog</div>
-    <h1 class="page-header-title">From Fallen Tree to Finished Bowl: The 18-Month Journey of a Walnut</h1>
-    <p class="page-header-subtitle">April 2026 · Michael Cedoz</p>
-  </div>
-</section>
-
-<section style="background-color: var(--warm-cream); padding: 4rem 2rem;">
-  <article class="section-inner reveal article-body" style="max-width: 720px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: var(--text-secondary);">
-    <picture>
-      <source srcset="gallery-raw-log.webp" type="image/webp">
-      <img src="gallery-raw-log.jpg" alt="Raw black walnut log section resting on the workshop floor" loading="lazy" style="width: 100%; border-radius: 12px; margin-bottom: 2rem;">
-    </picture>
-
-    <p class="article-lede">In the fall of 2024, a 60-foot black walnut came down during a storm in a backyard just outside Gambier. The homeowners didn't want firewood. They wanted to know if the tree could become something else. A year and a half later, a piece of that tree sits on a kitchen counter as a finished bowl. Here's what happened in between.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Step 1: Reading the Log</h2>
-    <p>When I pulled up with the trailer, the trunk had already been cut into four-foot sections. Black walnut (<em>Juglans nigra</em>) is one of the most prized hardwoods in Ohio — dark chocolate heartwood, a creamy pale sapwood edge, and a grain that can range from straight and quiet to wild and figured. The trick is knowing what you're looking at before the chainsaw comes out.</p>
-    <p>I spent the first half hour just walking around the sections, looking for the best bowl blanks. Crotches — where a branch meets the trunk — often have the most dramatic figure. The lower trunk tends to have the densest, most stable grain. Knots can be beautiful or disastrous, depending on whether the wood around them has tension in it.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Step 2: Rough Turning While Wet</h2>
-    <p>This is the part that surprises people. Instead of letting the log dry out completely before I touch it, I turn each bowl blank while it's still wet — full of sap, sometimes dripping. Wet wood is soft, cuts like cheese, and throws a satisfying spray of shavings off the lathe. I turn the bowl oversized, with walls roughly an inch thick, knowing the wood is going to move as it dries.</p>
-    <p>This is called rough turning, and it's about 90% of the final shape. The rough-turned blank goes into a paper bag filled with the wet shavings from the cut, or sometimes into a box of anhydrous lanolin. Both slow the drying down so the bowl doesn't crack as it shrinks.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Step 3: The Long Wait</h2>
-    <p>Here's the part no tutorial video ever shows: nothing. For the next nine to twelve months, the rough-turned bowl just sits on a shelf. Walnut loses moisture slowly — about an inch of thickness per year as a rough rule — and as it does, the bowl changes shape. What started as a round form becomes oval. The rim dips. The wood remembers it used to be a tree.</p>
-    <p>I weigh each rough bowl when I shelve it and write the weight on masking tape stuck to the side. Once the weight stops dropping — usually when the wood hits around 8–12% moisture content, matching the humidity inside a typical home — I know it's ready.</p>
-    <p>Kiln drying is faster but introduces more stress into the wood. For bowls, I almost always air dry. A walnut bowl roughed out in October is usually ready to finish-turn sometime the following summer.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Step 4: The Second Turning</h2>
-    <p>This is where the magic happens. I mount the now-dry, slightly warped bowl back on the lathe and re-true it — taking the oval back to round, cleaning up the surface, and bringing the walls down to final thickness. Because the wood is now dry and stable, it can be cut fine and clean. This is where the grain really shows up for the first time: the chatoyance of the walnut, the transition between sapwood and heartwood, any figure that was hidden in the rough surface.</p>
-    <p>Finish turning takes a fraction of the time rough turning did — maybe two hours for a medium bowl. But it's the part that makes or breaks the piece.</p>
-
-    <picture>
-      <source srcset="gallery-walnut-bowl.webp" type="image/webp">
-      <img src="gallery-walnut-bowl.jpg" alt="Finished hand-turned walnut bowl with dramatic grain and natural edge" loading="lazy" style="width: 100%; border-radius: 12px; margin: 2.5rem 0;">
-    </picture>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Step 5: Sanding and Finishing</h2>
-    <p>Sanding runs through a progression of grits — usually 120, 180, 220, 320, sometimes up to 400 — with the lathe spinning, then stopped, then spinning the other direction. Any scratch left by a lower grit will show up under the finish, so the discipline matters.</p>
-    <p>For food-safe bowls, I use a mineral oil and beeswax blend. Several coats, wet-sanded in between on the final pass, then buffed. The wood drinks the first coat like it hasn't seen water in a year. The grain lights up. What was flat suddenly has depth.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Why It's Worth the Wait</h2>
-    <p>You can buy a wooden bowl for $15 at any home store. It was turned on a machine, from plantation-grown wood, in a country you'll never visit, and finished in a spray booth. It looks fine. It works fine. It is, in every meaningful way, a disposable object.</p>
-    <p>A bowl that started as a fallen walnut in Knox County and took eighteen months to become what it is — that's a different thing. It holds the story of the tree. It shows where the grain swirled around an old branch. The sapwood edge marks the year the tree stopped growing. When you hand it to your grandchild in forty years, the wood will still be there, still doing its job, still telling that story.</p>
-    <p>That's why we wait.</p>
-
-    <p style="margin-top: 3rem;"><a href="contact.html" style="color: var(--barn-red); text-decoration: underline;">Interested in a custom bowl? Get in touch →</a></p>
-    <p style="margin-top: 1rem;"><a href="about.html" style="color: var(--barn-red); text-decoration: underline;">← Back to About</a></p>
-  </article>
-</section>
-
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-content reveal">
-      <h2>Let's talk about your next piece</h2>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
       <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-header">
+      <span class="mono reveal">&sect; Journal &mdash; The process</span>
+      <h1 class="reveal">From fallen tree to finished bowl: the 18-month journey of a <em>walnut</em>.</h1>
+      <p class="lede reveal">April 2026 &middot; Michael Cedoz</p>
+    </section>
+
+    <section class="article">
+      <div class="article-body reveal">
+        <picture>
+          <source srcset="gallery-raw-log.webp" type="image/webp">
+          <img src="gallery-raw-log.jpg" alt="Raw black walnut log section resting on the workshop floor" loading="lazy">
+        </picture>
+
+        <p class="article-lede">In the fall of 2024, a 60-foot black walnut came down during a storm in a backyard just outside Gambier. The homeowners didn't want firewood. They wanted to know if the tree could become something else. A year and a half later, a piece of that tree sits on a kitchen counter as a finished bowl. Here's what happened in between.</p>
+
+        <h2>Step 1: Reading the log</h2>
+        <p>When I pulled up with the trailer, the trunk had already been cut into four-foot sections. Black walnut (<em>Juglans nigra</em>) is one of the most prized hardwoods in Ohio &mdash; dark chocolate heartwood, a creamy pale sapwood edge, and a grain that can range from straight and quiet to wild and figured. The trick is knowing what you're looking at before the chainsaw comes out.</p>
+        <p>I spent the first half hour just walking around the sections, looking for the best bowl blanks. Crotches &mdash; where a branch meets the trunk &mdash; often have the most dramatic figure. The lower trunk tends to have the densest, most stable grain. Knots can be beautiful or disastrous, depending on whether the wood around them has tension in it.</p>
+
+        <h2>Step 2: Rough turning while wet</h2>
+        <p>This is the part that surprises people. Instead of letting the log dry out completely before I touch it, I turn each bowl blank while it's still wet &mdash; full of sap, sometimes dripping. Wet wood is soft, cuts like cheese, and throws a satisfying spray of shavings off the lathe. I turn the bowl oversized, with walls roughly an inch thick, knowing the wood is going to move as it dries.</p>
+        <p>This is called rough turning, and it's about 90% of the final shape. The rough-turned blank goes into a paper bag filled with the wet shavings from the cut, or sometimes into a box of anhydrous lanolin. Both slow the drying down so the bowl doesn't crack as it shrinks.</p>
+
+        <h2>Step 3: The long wait</h2>
+        <p>Here's the part no tutorial video ever shows: nothing. For the next nine to twelve months, the rough-turned bowl just sits on a shelf. Walnut loses moisture slowly &mdash; about an inch of thickness per year as a rough rule &mdash; and as it does, the bowl changes shape. What started as a round form becomes oval. The rim dips. The wood remembers it used to be a tree.</p>
+        <p>I weigh each rough bowl when I shelve it and write the weight on masking tape stuck to the side. Once the weight stops dropping &mdash; usually when the wood hits around 8&ndash;12% moisture content, matching the humidity inside a typical home &mdash; I know it's ready.</p>
+        <p>Kiln drying is faster but introduces more stress into the wood. For bowls, I almost always air dry. A walnut bowl roughed out in October is usually ready to finish-turn sometime the following summer.</p>
+
+        <h2>Step 4: The second turning</h2>
+        <p>This is where the magic happens. I mount the now-dry, slightly warped bowl back on the lathe and re-true it &mdash; taking the oval back to round, cleaning up the surface, and bringing the walls down to final thickness. Because the wood is now dry and stable, it can be cut fine and clean. This is where the grain really shows up for the first time: the chatoyance of the walnut, the transition between sapwood and heartwood, any figure that was hidden in the rough surface.</p>
+        <p>Finish turning takes a fraction of the time rough turning did &mdash; maybe two hours for a medium bowl. But it's the part that makes or breaks the piece.</p>
+
+        <picture>
+          <source srcset="gallery-walnut-bowl.webp" type="image/webp">
+          <img src="gallery-walnut-bowl.jpg" alt="Finished hand-turned walnut bowl with dramatic grain and natural edge" loading="lazy">
+        </picture>
+
+        <h2>Step 5: Sanding and finishing</h2>
+        <p>Sanding runs through a progression of grits &mdash; usually 120, 180, 220, 320, sometimes up to 400 &mdash; with the lathe spinning, then stopped, then spinning the other direction. Any scratch left by a lower grit will show up under the finish, so the discipline matters.</p>
+        <p>For food-safe bowls, I use a mineral oil and beeswax blend. Several coats, wet-sanded in between on the final pass, then buffed. The wood drinks the first coat like it hasn't seen water in a year. The grain lights up. What was flat suddenly has depth.</p>
+
+        <h2>Why it's worth the wait</h2>
+        <p>You can buy a wooden bowl for $15 at any home store. It was turned on a machine, from plantation-grown wood, in a country you'll never visit, and finished in a spray booth. It looks fine. It works fine. It is, in every meaningful way, a disposable object.</p>
+        <p>A bowl that started as a fallen walnut in Knox County and took eighteen months to become what it is &mdash; that's a different thing. It holds the story of the tree. It shows where the grain swirled around an old branch. The sapwood edge marks the year the tree stopped growing. When you hand it to your grandchild in forty years, the wood will still be there, still doing its job, still telling that story.</p>
+        <p>That's why we wait.</p>
+      </div>
+
+      <div class="article-nav">
+        <a href="about.html#journal">&larr; All essays</a>
+        <a href="contact.html">Interested in a custom bowl? &rarr;</a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="inner">
+        <div>
+          <span class="mono">&sect; Correspondence</span>
+          <h2>Tell me about the <em>tree,</em><br>or the <span class="barn">room</span> it's headed for.</h2>
+        </div>
+        <div class="side reveal">
+          <p>Most pieces begin with an email &mdash; a photo of a room, a rough dimension, a story about someone the piece is for.</p>
+          <a class="btn" href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 

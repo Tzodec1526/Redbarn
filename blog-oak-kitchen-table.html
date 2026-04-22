@@ -64,10 +64,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -80,89 +85,106 @@
 <a href="#main" class="skip-link">Skip to main content</a>
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<section class="page-header" id="main">
-  <div class="page-header-inner">
-    <div class="page-header-tag">Blog</div>
-    <h1 class="page-header-title">Anatomy of a Build: The Oak Kitchen Table</h1>
-    <p class="page-header-subtitle">February 2026 · Michael Cedoz</p>
-  </div>
-</section>
-
-<section style="background-color: var(--warm-cream); padding: 4rem 2rem;">
-  <article class="section-inner reveal" style="max-width: 720px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: var(--text-secondary);">
-    <picture>
-      <source srcset="gallery-table-top.webp" type="image/webp">
-      <img src="gallery-table-top.jpg" alt="Hand-planed oak kitchen table surface" loading="lazy" style="width: 100%; border-radius: 12px; margin-bottom: 2rem;">
-    </picture>
-
-    <p>A few months back I got a call from a customer in Michigan. He wanted a kitchen table — something big enough for the whole family, built from white oak, with a natural look that still felt refined. No stain, just the wood speaking for itself. That's my kind of project.</p>
-    <p>I thought I'd walk through how a piece like this comes together, from the first phone call to the final delivery.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Finding the Right Slabs</h2>
-    <p>For a table this size, you need wide boards, and they need to come from the same tree or at least the same species and similar age. Consistency matters. I spent about two weeks sourcing white oak slabs with tight, straight grain and minimal sapwood. I wanted boards thick enough to give the table real presence — a full inch and a quarter after final surfacing.</p>
-    <p>I ended up with four slabs from a mill about 40 minutes south of here. They'd been air-drying in the kiln for over a year — right around 7% moisture content, which is exactly where you want it for indoor furniture.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Joinery and Glue-Up</h2>
-    <p>The tabletop is edge-joined — four boards glued side by side. Sounds simple, but getting those joints dead flat and invisible takes a lot of handwork. I joint the edges by hand with a No. 7 plane, checking the fit with a straightedge until there's no light peeking through. When the joint is that tight, the seam essentially disappears.</p>
-    <p>After glue-up, I let the top sit for a full week before surfacing. Wood moves, especially big panels. Rushing this step is how you end up with a table that cups or twists down the road.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">The Base</h2>
-    <p>The customer wanted something sturdy but not heavy-looking. I went with a trestle-style base in the same white oak — thick, chamfered legs connected by a long stretcher with through-tenon joinery. No metal fasteners on the base at all. The joints are drawbored, meaning a wooden peg locks the tenon in place. It's old-school and incredibly strong.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Finishing</h2>
-    <p>This is where patience pays off. I sanded the top through six grits, starting at 80 and working up to 320. Then I applied a hardwax oil finish — three coats, hand-rubbed, with 24 hours between each coat. Hardwax oil is my go-to for tables because it's food-safe, brings out the grain beautifully, and can be spot-repaired if the surface gets scratched years down the line.</p>
-    <p>The finished top has this warm, honey tone with the cathedral grain pattern that white oak is known for. Under the right light, it almost glows.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Delivery Day</h2>
-    <p>I delivered the table myself — strapped it into the truck, drove it up to Michigan, and set it up in the kitchen. Watching someone see their piece for the first time never gets old. The customer ran his hand across the top and said he could feel the grain under his fingertips. That's the whole point.</p>
-
-    <p style="margin-top: 3rem;"><a href="about.html" style="color: var(--barn-red); text-decoration: underline;">← Back to About</a></p>
-  </article>
-</section>
-
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-content reveal">
-      <h2>Let's talk about your next piece</h2>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
       <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-header">
+      <span class="mono reveal">&sect; Journal &mdash; A build</span>
+      <h1 class="reveal">Anatomy of a build: the <em>oak</em> kitchen table.</h1>
+      <p class="lede reveal">February 2026 &middot; Michael Cedoz</p>
+    </section>
+
+    <section class="article">
+      <div class="article-body reveal">
+        <picture>
+          <source srcset="gallery-table-top.webp" type="image/webp">
+          <img src="gallery-table-top.jpg" alt="Hand-planed oak kitchen table surface" loading="lazy">
+        </picture>
+
+        <p class="article-lede">A few months back I got a call from a customer in Michigan. He wanted a kitchen table &mdash; something big enough for the whole family, built from white oak, with a natural look that still felt refined. No stain, just the wood speaking for itself. That's my kind of project.</p>
+        <p>I thought I'd walk through how a piece like this comes together, from the first phone call to the final delivery.</p>
+
+        <h2>Finding the right slabs</h2>
+        <p>For a table this size, you need wide boards, and they need to come from the same tree or at least the same species and similar age. Consistency matters. I spent about two weeks sourcing white oak slabs with tight, straight grain and minimal sapwood. I wanted boards thick enough to give the table real presence &mdash; a full inch and a quarter after final surfacing.</p>
+        <p>I ended up with four slabs from a mill about 40 minutes south of here. They'd been air-drying in the kiln for over a year &mdash; right around 7% moisture content, which is exactly where you want it for indoor furniture.</p>
+
+        <h2>Joinery and glue-up</h2>
+        <p>The tabletop is edge-joined &mdash; four boards glued side by side. Sounds simple, but getting those joints dead flat and invisible takes a lot of handwork. I joint the edges by hand with a No. 7 plane, checking the fit with a straightedge until there's no light peeking through. When the joint is that tight, the seam essentially disappears.</p>
+        <p>After glue-up, I let the top sit for a full week before surfacing. Wood moves, especially big panels. Rushing this step is how you end up with a table that cups or twists down the road.</p>
+
+        <h2>The base</h2>
+        <p>The customer wanted something sturdy but not heavy-looking. I went with a trestle-style base in the same white oak &mdash; thick, chamfered legs connected by a long stretcher with through-tenon joinery. No metal fasteners on the base at all. The joints are drawbored, meaning a wooden peg locks the tenon in place. It's old-school and incredibly strong.</p>
+
+        <h2>Finishing</h2>
+        <p>This is where patience pays off. I sanded the top through six grits, starting at 80 and working up to 320. Then I applied a hardwax oil finish &mdash; three coats, hand-rubbed, with 24 hours between each coat. Hardwax oil is my go-to for tables because it's food-safe, brings out the grain beautifully, and can be spot-repaired if the surface gets scratched years down the line.</p>
+        <p>The finished top has this warm, honey tone with the cathedral grain pattern that white oak is known for. Under the right light, it almost glows.</p>
+
+        <h2>Delivery day</h2>
+        <p>I delivered the table myself &mdash; strapped it into the truck, drove it up to Michigan, and set it up in the kitchen. Watching someone see their piece for the first time never gets old. The customer ran his hand across the top and said he could feel the grain under his fingertips. That's the whole point.</p>
+      </div>
+
+      <div class="article-nav">
+        <a href="about.html#journal">&larr; All essays</a>
+        <a href="contact.html">Commission your own &rarr;</a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="inner">
+        <div>
+          <span class="mono">&sect; Correspondence</span>
+          <h2>Tell me about the <em>tree,</em><br>or the <span class="barn">room</span> it's headed for.</h2>
+        </div>
+        <div class="side reveal">
+          <p>Most pieces begin with an email &mdash; a photo of a room, a rough dimension, a story about someone the piece is for.</p>
+          <a class="btn" href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 

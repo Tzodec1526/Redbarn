@@ -11,70 +11,78 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta name="theme-color" content="#8B2500">
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-<!-- Skip link -->
 <a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Mobile overlay -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- NAVIGATION -->
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<!-- PAGE CONTENT -->
-<section class="page-header" id="main" style="min-height: 60vh; display: flex; align-items: center;">
-  <div class="section-inner" style="text-align: center;">
-    <div class="section-tag">404</div>
-    <h1>Page Not Found</h1>
-    <p style="color: var(--text-secondary); max-width: 480px; margin: 1rem auto 2rem; font-size: 1.05rem;">The page you're looking for doesn't exist or has been moved. Let's get you back on track.</p>
-    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-      <a href="index.html" class="btn btn-primary">Back to Home</a>
-      <a href="gallery.html" class="btn btn-secondary">View the Gallery</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
+  <!-- MASTHEAD -->
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="notfound">
+      <div class="n">404.</div>
+      <h1>This page has wandered off into the woods.</h1>
+      <p>The page you're looking for doesn't exist or has been moved. No harm done &mdash; let's get you back on a path that leads somewhere.</p>
+      <div class="notfound-actions">
+        <a href="index.html" class="btn">Back to home <span class="arr">&rarr;</span></a>
+        <a href="gallery.html" class="btn ghost">View the gallery</a>
+      </div>
+    </section>
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 

@@ -64,10 +64,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -77,94 +82,103 @@
 </head>
 <body>
 
-<!-- Skip link -->
 <a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Mobile overlay -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- NAVIGATION -->
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html" class="active">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<!-- PAGE HEADER -->
-<section class="page-header" id="main">
-  <div class="page-header-inner">
-    <div class="page-header-tag">Blog</div>
-    <h1 class="page-header-title">Why the Wood Matters More Than You Think</h1>
-    <p class="page-header-subtitle">March 2026 · Michael Cedoz</p>
-  </div>
-</section>
-
-<!-- ARTICLE -->
-<section style="background-color: var(--warm-cream); padding: 4rem 2rem;">
-  <article class="section-inner reveal" style="max-width: 720px; margin: 0 auto; line-height: 1.8; font-size: 1.05rem; color: var(--text-secondary);">
-    <picture>
-      <source srcset="gallery-oak-grain.webp" type="image/webp">
-      <img src="gallery-oak-grain.jpg" alt="Close-up of white oak grain pattern" loading="lazy" style="width: 100%; border-radius: 12px; margin-bottom: 2rem;">
-    </picture>
-
-    <p>People ask me all the time: what makes one bowl different from another? The answer almost always starts with the wood.</p>
-    <p>When I walk into my shop and pick up a rough blank, I'm not just grabbing the nearest piece. I'm reading it — looking at the grain direction, checking for tension in the fibers, noticing where a branch used to be. Every piece of wood has a story written into its rings, and my job is to figure out how to tell that story.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Not All Hardwoods Are Created Equal</h2>
-    <p>Take cherry and walnut, two of the most popular species I work with. Cherry starts out pale and almost pinkish, but give it a year of sunlight and it deepens into a rich, warm amber. It's forgiving on the lathe and finishes like silk. Walnut, on the other hand, comes off the tree already dark and dramatic. The grain is bolder, the contrasts sharper. It demands attention.</p>
-    <p>Then there's spalted maple — wood that's been partially colonized by fungi, leaving behind these wild, ink-like lines running through the grain. It's unpredictable and can be tricky to turn because the soft spots want to tear out. But when it works? There's nothing else like it.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">Local Wood, Local Character</h2>
-    <p>Most of the wood I use comes from right here in Knox County and the surrounding area. Fallen trees from storms, trees taken down for construction, logs that would otherwise end up as firewood or mulch. There's something satisfying about giving a 100-year-old oak that came down in someone's backyard a second life as a kitchen table.</p>
-    <p>Ohio grows incredible hardwoods — red and white oak, black walnut, sugar maple, ash, cherry. Working with local species means I know the wood. I know how it moves when it dries, how it responds to the tools, and what kind of finish will bring out the best in it.</p>
-
-    <h2 style="font-family: 'Playfair Display', serif; font-size: 1.4rem; color: var(--text-primary); margin: 2.5rem 0 1rem;">The Conversation Between Maker and Material</h2>
-    <p>Here's the thing nobody tells you about woodworking: you don't fully control the outcome. The wood has a say. A hidden crack might redirect your design. A knot in just the right spot might become the centerpiece of the whole piece. The best work happens when you stop fighting the material and start working with it.</p>
-    <p>That's what I love about this craft. Every piece of wood is a collaboration.</p>
-
-    <p style="margin-top: 3rem;"><a href="about.html" style="color: var(--barn-red); text-decoration: underline;">← Back to About</a></p>
-  </article>
-</section>
-
-<!-- CTA SECTION -->
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-content reveal">
-      <h2>Let's talk about your next piece</h2>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
       <a href="index.html">Home</a>
+      <a href="about.html" class="active">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="page-header">
+      <span class="mono reveal">&sect; Journal &mdash; Materials</span>
+      <h1 class="reveal">Why the <em>wood</em> matters more than you think.</h1>
+      <p class="lede reveal">March 2026 &middot; Michael Cedoz</p>
+    </section>
+
+    <section class="article">
+      <div class="article-body reveal">
+        <picture>
+          <source srcset="gallery-oak-grain.webp" type="image/webp">
+          <img src="gallery-oak-grain.jpg" alt="Close-up of white oak grain pattern" loading="lazy">
+        </picture>
+
+        <p class="article-lede">People ask me all the time: what makes one bowl different from another? The answer almost always starts with the wood.</p>
+        <p>When I walk into my shop and pick up a rough blank, I'm not just grabbing the nearest piece. I'm reading it &mdash; looking at the grain direction, checking for tension in the fibers, noticing where a branch used to be. Every piece of wood has a story written into its rings, and my job is to figure out how to tell that story.</p>
+
+        <h2>Not all hardwoods are created equal</h2>
+        <p>Take cherry and walnut, two of the most popular species I work with. Cherry starts out pale and almost pinkish, but give it a year of sunlight and it deepens into a rich, warm amber. It's forgiving on the lathe and finishes like silk. Walnut, on the other hand, comes off the tree already dark and dramatic. The grain is bolder, the contrasts sharper. It demands attention.</p>
+        <p>Then there's spalted maple &mdash; wood that's been partially colonized by fungi, leaving behind these wild, ink-like lines running through the grain. It's unpredictable and can be tricky to turn because the soft spots want to tear out. But when it works? There's nothing else like it.</p>
+
+        <h2>Local wood, local character</h2>
+        <p>Most of the wood I use comes from right here in Knox County and the surrounding area. Fallen trees from storms, trees taken down for construction, logs that would otherwise end up as firewood or mulch. There's something satisfying about giving a 100-year-old oak that came down in someone's backyard a second life as a kitchen table.</p>
+        <p>Ohio grows incredible hardwoods &mdash; red and white oak, black walnut, sugar maple, ash, cherry. Working with local species means I know the wood. I know how it moves when it dries, how it responds to the tools, and what kind of finish will bring out the best in it.</p>
+
+        <h2>The conversation between maker and material</h2>
+        <p>Here's the thing nobody tells you about woodworking: you don't fully control the outcome. The wood has a say. A hidden crack might redirect your design. A knot in just the right spot might become the centerpiece of the whole piece. The best work happens when you stop fighting the material and start working with it.</p>
+        <p>That's what I love about this craft. Every piece of wood is a collaboration.</p>
+      </div>
+
+      <div class="article-nav">
+        <a href="about.html#journal">&larr; All essays</a>
+        <a href="contact.html">Start a conversation &rarr;</a>
+      </div>
+    </section>
+
+    <section class="contact">
+      <div class="inner">
+        <div>
+          <span class="mono">&sect; Correspondence</span>
+          <h2>Tell me about the <em>tree,</em><br>or the <span class="barn">room</span> it's headed for.</h2>
+        </div>
+        <div class="side reveal">
+          <p>Most pieces begin with an email &mdash; a photo of a room, a rough dimension, a story about someone the piece is for.</p>
+          <a class="btn" href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 

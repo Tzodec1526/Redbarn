@@ -34,10 +34,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Favicon & Theme -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -48,278 +53,274 @@
 </head>
 <body>
 
-<!-- Skip link -->
 <a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Mobile overlay -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- NAVIGATION -->
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html" class="active">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<!-- PAGE HEADER -->
-<header class="page-header" id="main">
-  <div class="section-tag">Gallery</div>
-  <h1>From the Workshop</h1>
-  <p>A closer look at recent pieces and works in progress.</p>
-</header>
-
-<!-- GALLERY -->
-<section class="gallery-page-section">
-  <div class="gallery-page-grid reveal">
-    <!-- FEATURED: Oak table top -->
-    <div class="gallery-item featured" role="button" tabindex="0" aria-label="View oak kitchen table top">
-      <picture>
-        <source srcset="gallery-table-top.webp" type="image/webp">
-        <img src="gallery-table-top.jpg" alt="Oak kitchen table top view showing cathedral grain pattern" loading="lazy" width="500" height="500">
-      </picture>
-    </div>
-    <!-- Walnut bowl — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View walnut bowl">
-      <picture>
-        <source srcset="gallery-walnut-bowl.webp" type="image/webp">
-        <img src="gallery-walnut-bowl.jpg" alt="Hand-turned walnut bowl with natural edge and dramatic grain" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Live-edge console — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View live-edge console">
-      <picture>
-        <source srcset="gallery-liveedge-console.webp" type="image/webp">
-        <img src="gallery-liveedge-console.jpg" alt="Live-edge wood console table on hairpin legs in a living room" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Pens detail — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View handcrafted pens">
-      <picture>
-        <source srcset="gallery-pens-detail.webp" type="image/webp">
-        <img src="gallery-pens-detail.jpg" alt="Two handcrafted pens — one turned wood, one marbled acrylic with decorative clips" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- BBQ tool set — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View BBQ tool set">
-      <picture>
-        <source srcset="gallery-bbq-set.webp" type="image/webp">
-        <img src="gallery-bbq-set.jpg" alt="BBQ grilling set with hand-turned oak handles and carrying case" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Oak table in customer home — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View oak table in home">
-      <picture>
-        <source srcset="gallery-oak-table-home.webp" type="image/webp">
-        <img src="gallery-oak-table-home.jpg" alt="Custom oak dining table in a customer's home with chairs" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- FEATURED: Outdoor kitchen complete — new Dropbox photo -->
-    <div class="gallery-item featured" role="button" tabindex="0" aria-label="View outdoor kitchen">
-      <picture>
-        <source srcset="gallery-outdoor-kitchen-complete.webp" type="image/webp">
-        <img src="gallery-outdoor-kitchen-complete.jpg" alt="Completed oak outdoor kitchen station with dual sinks and burners" loading="lazy" width="500" height="500">
-      </picture>
-    </div>
-    <!-- Bowl on granite counter — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View bowl on granite counter">
-      <picture>
-        <source srcset="gallery-bowl-granite.webp" type="image/webp">
-        <img src="gallery-bowl-granite.jpg" alt="Hand-turned walnut bowl displayed on a granite kitchen counter" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Side table with metal legs — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View side table">
-      <picture>
-        <source srcset="gallery-side-table-metal.webp" type="image/webp">
-        <img src="gallery-side-table-metal.jpg" alt="Warm-toned wood side table with black metal legs in a living room" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Growth chart tree — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View custom growth chart">
-      <picture>
-        <source srcset="gallery-growth-chart.webp" type="image/webp">
-        <img src="gallery-growth-chart.jpg" alt="Custom wooden growth chart shaped like a tree with personalized names" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Oak grain detail -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View oak grain detail">
-      <picture>
-        <source srcset="gallery-oak-grain.webp" type="image/webp">
-        <img src="gallery-oak-grain.jpg" alt="Close-up of freshly finished oak tabletop grain" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Raw log with chainsaw — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View raw log">
-      <picture>
-        <source srcset="gallery-raw-log-chainsaw.webp" type="image/webp">
-        <img src="gallery-raw-log-chainsaw.jpg" alt="Raw log section and chainsaw on the shop floor — where every piece begins" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Outdoor kitchen in shop — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View outdoor kitchen in shop">
-      <picture>
-        <source srcset="gallery-outdoor-kitchen-shop.webp" type="image/webp">
-        <img src="gallery-outdoor-kitchen-shop.jpg" alt="Outdoor kitchen station in the workshop with natural light" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Live-edge desk -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View live-edge desk">
-      <picture>
-        <source srcset="gallery-liveedge-office.webp" type="image/webp">
-        <img src="gallery-liveedge-office.jpg" alt="Live-edge desk in a home office with books and lamp" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Joinery detail -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View joinery detail">
-      <picture>
-        <source srcset="gallery-joinery-detail.webp" type="image/webp">
-        <img src="gallery-joinery-detail.jpg" alt="Close-up of oak table leg joinery showing precise craftsmanship" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Shop with Redbarn banner — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View the workshop">
-      <picture>
-        <source srcset="gallery-shop-banner.webp" type="image/webp">
-        <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations in the Redbarn workshop with banner" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Outdoor kitchen sink detail — new Dropbox photo -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View outdoor kitchen sink detail">
-      <picture>
-        <source srcset="gallery-outdoor-kitchen-sink.webp" type="image/webp">
-        <img src="gallery-outdoor-kitchen-sink.jpg" alt="Close-up of oak outdoor kitchen station with stainless sink" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Breakfast nook -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View breakfast nook table">
-      <picture>
-        <source srcset="gallery-breakfast-nook.webp" type="image/webp">
-        <img src="gallery-breakfast-nook.jpg" alt="Small handmade oak table styled in a cozy breakfast nook" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <!-- Sewing machine table -->
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View sewing machine table">
-      <picture>
-        <source srcset="gallery-sewing-table.webp" type="image/webp">
-        <img src="gallery-sewing-table.jpg" alt="Antique sewing machine base repurposed as side table" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-    <div class="gallery-item" role="button" tabindex="0" aria-label="View outdoor kitchen build">
-      <picture>
-        <source srcset="gallery-outdoor-kitchen.webp" type="image/webp">
-        <img src="gallery-outdoor-kitchen.jpg" alt="Outdoor kitchen build in progress" loading="lazy" width="400" height="400">
-      </picture>
-    </div>
-  </div>
-</section>
-
-<!-- Lightbox -->
-<div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer" aria-modal="true">
-  <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
-  <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>
-  <button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>
-  <img src="" alt="" id="lightboxImg">
-</div>
-
-<!-- CTA -->
-<section class="testimonials gallery-cta">
-  <div class="section-inner" style="text-align: center;">
-    <h2>Have something in mind?</h2>
-    <p>Let's talk about bringing your vision to life.</p>
-    <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
+  <!-- MASTHEAD -->
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
       <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html" class="active">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <span class="mono reveal">&sect; Gallery &mdash; Plates &amp; proofs</span>
+      <h1 class="reveal">From the <em>workshop</em>.</h1>
+      <p class="lede reveal">A closer look at recent pieces &mdash; bowls, tables, pens, and works in progress. Every photograph is a piece that actually left the shop.</p>
+    </section>
+
+    <!-- GALLERY -->
+    <section class="gallery-page">
+      <div class="gallery-page-grid reveal">
+        <div class="gallery-item featured" role="button" tabindex="0" aria-label="View oak kitchen table top">
+          <picture>
+            <source srcset="gallery-table-top.webp" type="image/webp">
+            <img src="gallery-table-top.jpg" alt="Oak kitchen table top view showing cathedral grain pattern" loading="lazy" width="500" height="500">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View walnut bowl">
+          <picture>
+            <source srcset="gallery-walnut-bowl.webp" type="image/webp">
+            <img src="gallery-walnut-bowl.jpg" alt="Hand-turned walnut bowl with natural edge and dramatic grain" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View live-edge console">
+          <picture>
+            <source srcset="gallery-liveedge-console.webp" type="image/webp">
+            <img src="gallery-liveedge-console.jpg" alt="Live-edge wood console table on hairpin legs in a living room" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View handcrafted pens">
+          <picture>
+            <source srcset="gallery-pens-detail.webp" type="image/webp">
+            <img src="gallery-pens-detail.jpg" alt="Two handcrafted pens — one turned wood, one marbled acrylic with decorative clips" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View BBQ tool set">
+          <picture>
+            <source srcset="gallery-bbq-set.webp" type="image/webp">
+            <img src="gallery-bbq-set.jpg" alt="BBQ grilling set with hand-turned oak handles and carrying case" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View oak table in home">
+          <picture>
+            <source srcset="gallery-oak-table-home.webp" type="image/webp">
+            <img src="gallery-oak-table-home.jpg" alt="Custom oak dining table in a customer's home with chairs" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item featured" role="button" tabindex="0" aria-label="View outdoor kitchen">
+          <picture>
+            <source srcset="gallery-outdoor-kitchen-complete.webp" type="image/webp">
+            <img src="gallery-outdoor-kitchen-complete.jpg" alt="Completed oak outdoor kitchen station with dual sinks and burners" loading="lazy" width="500" height="500">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View bowl on granite counter">
+          <picture>
+            <source srcset="gallery-bowl-granite.webp" type="image/webp">
+            <img src="gallery-bowl-granite.jpg" alt="Hand-turned walnut bowl displayed on a granite kitchen counter" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View side table">
+          <picture>
+            <source srcset="gallery-side-table-metal.webp" type="image/webp">
+            <img src="gallery-side-table-metal.jpg" alt="Warm-toned wood side table with black metal legs in a living room" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View custom growth chart">
+          <picture>
+            <source srcset="gallery-growth-chart.webp" type="image/webp">
+            <img src="gallery-growth-chart.jpg" alt="Custom wooden growth chart shaped like a tree with personalized names" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View oak grain detail">
+          <picture>
+            <source srcset="gallery-oak-grain.webp" type="image/webp">
+            <img src="gallery-oak-grain.jpg" alt="Close-up of freshly finished oak tabletop grain" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View raw log">
+          <picture>
+            <source srcset="gallery-raw-log-chainsaw.webp" type="image/webp">
+            <img src="gallery-raw-log-chainsaw.jpg" alt="Raw log section and chainsaw on the shop floor — where every piece begins" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View outdoor kitchen in shop">
+          <picture>
+            <source srcset="gallery-outdoor-kitchen-shop.webp" type="image/webp">
+            <img src="gallery-outdoor-kitchen-shop.jpg" alt="Outdoor kitchen station in the workshop with natural light" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View live-edge desk">
+          <picture>
+            <source srcset="gallery-liveedge-office.webp" type="image/webp">
+            <img src="gallery-liveedge-office.jpg" alt="Live-edge desk in a home office with books and lamp" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View joinery detail">
+          <picture>
+            <source srcset="gallery-joinery-detail.webp" type="image/webp">
+            <img src="gallery-joinery-detail.jpg" alt="Close-up of oak table leg joinery showing precise craftsmanship" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View the workshop">
+          <picture>
+            <source srcset="gallery-shop-banner.webp" type="image/webp">
+            <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations in the Redbarn workshop with banner" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View outdoor kitchen sink detail">
+          <picture>
+            <source srcset="gallery-outdoor-kitchen-sink.webp" type="image/webp">
+            <img src="gallery-outdoor-kitchen-sink.jpg" alt="Close-up of oak outdoor kitchen station with stainless sink" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View breakfast nook table">
+          <picture>
+            <source srcset="gallery-breakfast-nook.webp" type="image/webp">
+            <img src="gallery-breakfast-nook.jpg" alt="Small handmade oak table styled in a cozy breakfast nook" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View sewing machine table">
+          <picture>
+            <source srcset="gallery-sewing-table.webp" type="image/webp">
+            <img src="gallery-sewing-table.jpg" alt="Antique sewing machine base repurposed as side table" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+        <div class="gallery-item" role="button" tabindex="0" aria-label="View outdoor kitchen build">
+          <picture>
+            <source srcset="gallery-outdoor-kitchen.webp" type="image/webp">
+            <img src="gallery-outdoor-kitchen.jpg" alt="Outdoor kitchen build in progress" loading="lazy" width="400" height="400">
+          </picture>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer" aria-modal="true">
+      <button class="lightbox-close" aria-label="Close image viewer">&times;</button>
+      <button class="lightbox-nav lightbox-prev" aria-label="Previous image">&#8249;</button>
+      <button class="lightbox-nav lightbox-next" aria-label="Next image">&#8250;</button>
+      <img src="" alt="" id="lightboxImg">
+    </div>
+
+    <!-- CONTACT CTA -->
+    <section class="contact">
+      <div class="inner">
+        <div>
+          <span class="mono">&sect; Correspondence</span>
+          <h2>Have something <em>in mind?</em><br>Let's <span class="barn">talk</span>.</h2>
+        </div>
+        <div class="side reveal">
+          <p>If a piece in the gallery caught your eye &mdash; or sparked an idea for something of your own &mdash; reach out. Most commissions begin with a single email.</p>
+          <a class="btn" href="contact.html">Start a conversation <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 <script>
   // ---- Lightbox ----
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightboxImg');
-  const galleryItems = document.querySelectorAll('.gallery-item');
-  let currentIndex = 0;
+  (function(){
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    let currentIndex = 0;
 
-  function openLightbox(index) {
-    currentIndex = index;
-    const img = galleryItems[index].querySelector('img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
+    function openLightbox(index) {
+      currentIndex = index;
+      const img = galleryItems[index].querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('active');
+      document.body.style.overflow = 'hidden';
+    }
 
-  function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = '';
-  }
+    function closeLightbox() {
+      lightbox.classList.remove('active');
+      document.body.style.overflow = '';
+    }
 
-  function showPrev() {
-    currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-    const img = galleryItems[currentIndex].querySelector('img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-  }
+    function showPrev() {
+      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
+      const img = galleryItems[currentIndex].querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
 
-  function showNext() {
-    currentIndex = (currentIndex + 1) % galleryItems.length;
-    const img = galleryItems[currentIndex].querySelector('img');
-    lightboxImg.src = img.src;
-    lightboxImg.alt = img.alt;
-  }
+    function showNext() {
+      currentIndex = (currentIndex + 1) % galleryItems.length;
+      const img = galleryItems[currentIndex].querySelector('img');
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+    }
 
-  galleryItems.forEach((item, index) => {
-    item.addEventListener('click', () => openLightbox(index));
-    item.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        openLightbox(index);
-      }
+    galleryItems.forEach((item, index) => {
+      item.addEventListener('click', () => openLightbox(index));
+      item.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openLightbox(index);
+        }
+      });
     });
-  });
 
-  document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-  document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-  document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
-  lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) closeLightbox();
-  });
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
 
-  document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowLeft') showPrev();
-    if (e.key === 'ArrowRight') showNext();
-  });
+    document.addEventListener('keydown', (e) => {
+      if (!lightbox.classList.contains('active')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
+    });
+  })();
 </script>
 
 </body>

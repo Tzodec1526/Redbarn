@@ -101,10 +101,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Favicon & Theme -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -116,226 +121,347 @@
 </head>
 <body>
 
-<!-- Skip link -->
 <a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Mobile overlay -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- NAVIGATION -->
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html" class="active">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<!-- HERO -->
-<section class="hero" id="main">
-  <div class="hero-inner">
-    <div class="hero-content">
-      <div class="hero-tag">Mount Vernon, Ohio</div>
-      <h1 class="hero-title">Handcrafted with <em>purpose</em> and precision.</h1>
-      <p class="hero-desc">One-of-a-kind woodturning and custom woodwork — each piece shaped by hand and rooted in a love for the craft.</p>
-      <div class="hero-actions">
-        <a href="gallery.html" class="btn btn-primary">Explore the Work</a>
-        <a href="contact.html" class="btn btn-secondary">Get in Touch</a>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="hero-image-frame">
-        <picture>
-          <source srcset="hero-barn.webp" type="image/webp">
-          <img src="hero-barn.jpg" alt="The Redbarn Wood Turning workshop — a red gambrel barn surrounded by trees in Mount Vernon, Ohio" width="600" height="750">
-        </picture>
-      </div>
-      <div class="hero-floating-card">
-        <div class="icon-circle">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2L9 9H2l6 4.5L5.5 22 12 17l6.5 5-2.5-8.5L22 9h-7z"/></svg>
-        </div>
-        <div>
-          <div class="card-text">Handmade in Ohio</div>
-          <div class="card-sub">Every piece, one of a kind</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CRAFT CATEGORIES -->
-<section class="craft">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-tag">The Work</div>
-      <h2 class="section-title">Crafted by Hand, Built to Last</h2>
-      <p class="section-subtitle">Each category brings its own challenges and rewards — all united by a commitment to quality craftsmanship.</p>
-    </div>
-    <div class="craft-grid">
-      <div class="craft-card reveal">
-        <div class="craft-card-image">
-          <picture>
-            <source srcset="craft-bowls.webp" type="image/webp">
-            <img src="craft-bowls.jpg" alt="Hand-turned walnut bowl with rich, swirling grain" loading="lazy" width="400" height="300">
-          </picture>
-        </div>
-        <div class="craft-card-body">
-          <h3 class="craft-card-title">Bowls &amp; Vessels</h3>
-          <p class="craft-card-desc">Hand-turned from select hardwoods, each bowl celebrates the natural character of the wood — knots, grain, and all.</p>
-        </div>
-      </div>
-      <div class="craft-card reveal">
-        <div class="craft-card-image">
-          <picture>
-            <source srcset="craft-pens.webp" type="image/webp">
-            <img src="craft-pens.JPG" alt="Handcrafted wood and resin pens with ornate metal fittings" loading="lazy" width="400" height="300">
-          </picture>
-        </div>
-        <div class="craft-card-body">
-          <h3 class="craft-card-title">Pens &amp; Small Items</h3>
-          <p class="craft-card-desc">Precision-crafted writing instruments and everyday carries, finished to a mirror sheen and perfectly balanced in hand.</p>
-        </div>
-      </div>
-      <div class="craft-card reveal">
-        <div class="craft-card-image">
-          <picture>
-            <source srcset="craft-furniture.webp" type="image/webp">
-            <img src="craft-furniture.jpg" alt="Handcrafted oak kitchen table set for dinner in a home" loading="lazy" width="400" height="300">
-          </picture>
-        </div>
-        <div class="craft-card-body">
-          <h3 class="craft-card-title">Furniture &amp; Larger Pieces</h3>
-          <p class="craft-card-desc">Tables, consoles, and statement pieces that bring warmth and handmade character to any room in the home.</p>
-        </div>
-      </div>
-      <div class="craft-card reveal">
-        <div class="craft-card-image">
-          <picture>
-            <source srcset="craft-custom.webp" type="image/webp">
-            <img src="craft-custom.jpg" alt="Custom handcrafted wooden bassinette with turned spindles and heart cutout" loading="lazy" width="400" height="300">
-          </picture>
-        </div>
-        <div class="craft-card-body">
-          <h3 class="craft-card-title">Custom Commissions</h3>
-          <p class="craft-card-desc">Have something specific in mind? Let's bring your vision to life with a one-of-a-kind piece made just for you.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FROM THE WORKSHOP -->
-<section class="workshop-banner">
-  <div class="workshop-banner-inner reveal">
-    <picture>
-      <source srcset="gallery-shop-banner.webp" type="image/webp">
-      <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations lined up in the Redbarn workshop with the Redbarn Wood Turning banner" loading="lazy" class="workshop-banner-img">
-    </picture>
-    <div class="workshop-banner-overlay">
-      <p class="workshop-banner-title">From the workshop in Mount Vernon, Ohio.</p>
-      <p class="workshop-banner-sub">Every piece built by hand — one at a time.</p>
-    </div>
-  </div>
-</section>
-
-<!-- PROCESS -->
-<section class="process">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-tag">The Process</div>
-      <h2 class="section-title">How a Piece Comes to Life</h2>
-      <p class="section-subtitle">Every project begins with a conversation and ends with something you'll treasure.</p>
-    </div>
-    <div class="process-steps reveal">
-      <div class="process-step">
-        <h3>Select the Wood</h3>
-        <p>Each piece starts with hand-selecting the right wood — considering grain, species, and character to match the vision.</p>
-      </div>
-      <div class="process-step">
-        <h3>Shape &amp; Turn</h3>
-        <p>Using a combination of traditional turning techniques and modern tools, the raw wood takes shape on the lathe or workbench.</p>
-      </div>
-      <div class="process-step">
-        <h3>Finish &amp; Deliver</h3>
-        <p>Multiple rounds of sanding, finishing, and hand-polishing bring out the wood's natural beauty — ready to be enjoyed for years.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-  <div class="section-inner">
-    <div class="section-header reveal" style="text-align:center; margin-bottom: 3.5rem;">
-      <div class="section-tag">Happy Customers</div>
-      <h2 class="section-title">What People Are Saying</h2>
-    </div>
-    <div class="testimonials-grid reveal">
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-quote">When our son was born, we wanted something truly special for his nursery — not something mass-produced. Michael crafted a beautiful bassinette that's as sturdy as it is gorgeous. The woodwork is flawless, and knowing it was made by hand makes it that much more meaningful. This is something we'll pass down for generations.</div>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar">TF</div>
-          <div>
-            <div class="testimonial-attr">Tim F.</div>
-            <div class="testimonial-location">Perrysburg, Ohio</div>
-          </div>
-        </div>
-        <div class="testimonial-product">Custom Bassinette</div>
-      </div>
-      <div class="testimonial-card">
-        <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-        <div class="testimonial-quote">We'd been searching for a kitchen table that felt like the heart of the home, and Michael delivered exactly that. The oak is absolutely stunning — the grain, the finish, the craftsmanship. It completely lights up the room. Every time we sit down for dinner, someone comments on how beautiful it is.</div>
-        <div class="testimonial-footer">
-          <div class="testimonial-avatar">TC</div>
-          <div>
-            <div class="testimonial-attr">Tom C.</div>
-            <div class="testimonial-location">Michigan</div>
-          </div>
-        </div>
-        <div class="testimonial-product">Oak Kitchen Table</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CTA SECTION -->
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-content reveal">
-      <h2>Ready to talk about your next piece?</h2>
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
+  <!-- MASTHEAD -->
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
+      <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <div class="eyebrow reveal">
+          <span class="bar"></span>
+          <span>Est. the slow way &nbsp;&middot;&nbsp; Knox County</span>
+          <span class="barn">&numero; 041 &mdash; Mount Vernon, Ohio</span>
+        </div>
+
+        <h1 class="hero-title reveal">
+          Wood with a<br>
+          <span class="i">memory,</span><span class="amp"> &amp; </span><br>
+          hands that <span class="i">listen.</span>
+        </h1>
+
+        <p class="hero-lede reveal">
+          Michael Cedoz &mdash; a one-man shop in Knox County, turning storm-felled Ohio hardwoods into bowls, pens, tables, and commissions meant to outlive the maker.
+        </p>
+
+        <div class="cta-row reveal">
+          <a class="btn" href="contact.html">Start a conversation <span class="arr">&rarr;</span></a>
+          <a class="btn ghost" href="about.html">Read the story</a>
+        </div>
+
+        <div class="hero-meta reveal">
+          <div class="block">
+            <span class="mono">Maker</span>
+            <span class="v">Michael Cedoz &mdash;<br><em>sole proprietor</em></span>
+          </div>
+          <div class="block">
+            <span class="mono">Shop</span>
+            <span class="v">Mount Vernon,<br>Ohio</span>
+          </div>
+          <div class="block">
+            <span class="mono">Method</span>
+            <span class="v">Hand tools,<br>slow finishes</span>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero-figure reveal">
+        <div class="frame-label">
+          <span class="tag">Plate I</span>
+          <span>The workshop &mdash; Mount Vernon</span>
+        </div>
+        <picture>
+          <source srcset="hero-barn.webp" type="image/webp">
+          <img src="hero-barn.jpg" alt="The Redbarn Wood Turning workshop — a red gambrel barn in Mount Vernon, Ohio" width="600" height="750">
+        </picture>
+        <span class="corner tr" aria-hidden="true"></span>
+        <span class="corner bl" aria-hidden="true"></span>
+        <div class="logo-stamp" aria-hidden="true">
+          <img src="1.svg" alt="">
+        </div>
+      </figure>
+    </section>
+
+    <!-- RIBBON -->
+    <div class="ribbon" aria-hidden="true">
+      <div class="ribbon-track">
+        <span class="item">Bowls</span><span class="sep">&middot;</span>
+        <span class="item"><em>Live-edge tables</em></span><span class="sep">&middot;</span>
+        <span class="item">Turned pens</span><span class="sep">&middot;</span>
+        <span class="item"><em>Commissions</em></span><span class="sep">&middot;</span>
+        <span class="item">Heirloom boxes</span><span class="sep">&middot;</span>
+        <span class="item"><em>Kitchen tables</em></span><span class="sep">&middot;</span>
+        <span class="item">Bowls</span><span class="sep">&middot;</span>
+        <span class="item"><em>Live-edge tables</em></span><span class="sep">&middot;</span>
+        <span class="item">Turned pens</span><span class="sep">&middot;</span>
+        <span class="item"><em>Commissions</em></span><span class="sep">&middot;</span>
+        <span class="item">Heirloom boxes</span><span class="sep">&middot;</span>
+        <span class="item"><em>Kitchen tables</em></span><span class="sep">&middot;</span>
+      </div>
+    </div>
+
+    <!-- ABOUT (abbreviated — full story on about.html) -->
+    <section class="about" id="about">
+      <aside class="about-aside reveal">
+        <span class="mono">&sect; 01 &mdash; The maker</span>
+        <h2>A quiet shop <em>at the edge</em> of the woods.</h2>
+        <figure class="portrait">
+          <picture>
+            <source srcset="about-michael.webp" type="image/webp">
+            <img src="about-michael.jpg" alt="Michael Cedoz in his Mount Vernon workshop" width="500" height="600">
+          </picture>
+          <figcaption class="cap">Michael Cedoz &mdash; maker, Knox County</figcaption>
+        </figure>
+      </aside>
+
+      <div class="about-body reveal">
+        <p>
+          Michael Cedoz has been turning wood for the better part of two decades, most of it alone, most of it after dark. Redbarn is the name on the door &mdash; a gambrel-roofed shop a few miles outside Mount Vernon, where the Kokosing cuts through Knox County and the oaks have opinions about weather.
+        </p>
+        <p>
+          The work begins where the tree ends. A neighbor calls about a windfall; a storm takes a limb off a fence-line cherry; a 100-year-old oak comes down for construction. What arrives on the trailer is rarely dimensional lumber. It's a log, with knots, with history, with a life it has already lived.
+        </p>
+
+        <div class="pull">
+          "I'd rather spend a month with a single piece of walnut than a weekend with a truckload of plywood."
+        </div>
+
+        <p>
+          Everything that leaves the shop has been handled &mdash; milled, stacked, dried, re-stacked, planed, chiseled, sanded by the same pair of hands. There are no apprentices. There is no CNC. There is a kettle, a radio that mostly works, and two shop dogs &mdash; Kodiak and Lizzie &mdash; who supervise.
+        </p>
+        <p>
+          <a href="about.html" style="color: var(--barn); text-decoration: underline;">Read the full story &rarr;</a>
+        </p>
+
+        <div class="sig">&mdash; Michael Cedoz</div>
+        <div class="sig-line">Redbarn Wood Turning &middot; Mount Vernon, OH</div>
+      </div>
+    </section>
+
+    <!-- MARKS / PRINCIPLES -->
+    <section class="marks" id="principles">
+      <div class="marks-head reveal">
+        <h3>A few <em>marks</em> of the maker &mdash; the things that hold, and the things we won't budge on.</h3>
+        <span class="mono">&sect; 02 &mdash; Principles</span>
+      </div>
+      <div class="marks-grid">
+        <article class="mark reveal">
+          <div class="num">No. 01</div>
+          <div class="n">i.</div>
+          <h4>Local windfall, not lumber-yard stock</h4>
+          <p>Every board starts as a standing tree within a day's drive. Urban salvage, storm wood, a neighbor's old sycamore.</p>
+        </article>
+        <article class="mark reveal">
+          <div class="num">No. 02</div>
+          <div class="n">ii.</div>
+          <h4>Hand tools, where it matters</h4>
+          <p>Machines rough it in; hand tools finish it. A surface planed, not sanded, catches light in a way a belt sander cannot.</p>
+        </article>
+        <article class="mark reveal">
+          <div class="num">No. 03</div>
+          <div class="n">iii.</div>
+          <h4>Oil and wax &mdash; never polyurethane</h4>
+          <p>Finishes you can renew with a rag and an afternoon. Wood should age, not be sealed under plastic.</p>
+        </article>
+        <article class="mark reveal">
+          <div class="num">No. 04</div>
+          <div class="n">iv.</div>
+          <h4>One piece, one maker</h4>
+          <p>From log to final coat, the same hands. No outsourcing, no subcontracting, no white-labeling.</p>
+        </article>
+        <article class="mark reveal">
+          <div class="num">No. 05</div>
+          <div class="n">v.</div>
+          <h4>Air-dried, patient wood</h4>
+          <p>Two winters under the eaves before a board is considered ready. Kiln-drying saves time; air-drying saves character.</p>
+        </article>
+        <article class="mark reveal">
+          <div class="num">No. 06</div>
+          <div class="n">vi.</div>
+          <h4>If it breaks, bring it back</h4>
+          <p>A Redbarn piece is repaired for the life of the maker. Mail it, drop it off, we'll mend it.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- WORKSHOP BANNER -->
+    <section class="workshop-banner reveal" aria-label="A view from the workshop">
+      <picture>
+        <source srcset="gallery-shop-banner.webp" type="image/webp">
+        <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations lined up in the Redbarn workshop with the Redbarn Wood Turning banner" class="workshop-banner-img" loading="lazy">
+      </picture>
+      <div class="workshop-banner-overlay">
+        <span class="mono">A view from the shop</span>
+        <p class="workshop-banner-title">From a red barn in Mount Vernon, Ohio.</p>
+        <p class="workshop-banner-sub">Every piece built by hand &mdash; one at a time.</p>
+      </div>
+    </section>
+
+    <!-- WORK / CATEGORIES -->
+    <section class="work-strip" id="work">
+      <div class="strip-head reveal">
+        <span class="mono">&sect; 03 &mdash; The work</span>
+        <h3>Four ways a board becomes<br>something <em>you can hold</em>.</h3>
+      </div>
+      <div class="strip-grid">
+        <a class="strip-card reveal" href="gallery.html">
+          <div class="sc-img">
+            <picture>
+              <source srcset="craft-bowls.webp" type="image/webp">
+              <img src="craft-bowls.jpg" alt="Hand-turned walnut bowl with rich, swirling grain" loading="lazy" width="400" height="500">
+            </picture>
+          </div>
+          <div class="sc-body">
+            <span class="mono">i.</span>
+            <h4>Bowls &amp; vessels</h4>
+            <p>Turned from select hardwoods &mdash; knots, grain, and character left intact.</p>
+          </div>
+        </a>
+        <a class="strip-card reveal" href="gallery.html">
+          <div class="sc-img">
+            <picture>
+              <source srcset="craft-pens.webp" type="image/webp">
+              <img src="craft-pens.JPG" alt="Handcrafted wood and resin pens with ornate metal fittings" loading="lazy" width="400" height="500">
+            </picture>
+          </div>
+          <div class="sc-body">
+            <span class="mono">ii.</span>
+            <h4>Pens &amp; small items</h4>
+            <p>Precision writing instruments and everyday carries, balanced in the hand.</p>
+          </div>
+        </a>
+        <a class="strip-card reveal" href="gallery.html">
+          <div class="sc-img">
+            <picture>
+              <source srcset="craft-furniture.webp" type="image/webp">
+              <img src="craft-furniture.jpg" alt="Handcrafted oak kitchen table set for dinner in a home" loading="lazy" width="400" height="500">
+            </picture>
+          </div>
+          <div class="sc-body">
+            <span class="mono">iii.</span>
+            <h4>Furniture &amp; large work</h4>
+            <p>Tables, consoles, and statement pieces that warm a room and hold a family.</p>
+          </div>
+        </a>
+        <a class="strip-card reveal" href="contact.html">
+          <div class="sc-img">
+            <picture>
+              <source srcset="craft-custom.webp" type="image/webp">
+              <img src="craft-custom.jpg" alt="Custom handcrafted wooden bassinette with turned spindles" loading="lazy" width="400" height="500">
+            </picture>
+          </div>
+          <div class="sc-body">
+            <span class="mono">iv.</span>
+            <h4>Custom commissions</h4>
+            <p>Bring the idea &mdash; a dimension, a room, a story. We'll figure out the tree together.</p>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials" id="letters">
+      <div class="testimonials-head reveal">
+        <span class="mono">&sect; 04 &mdash; Letters from customers</span>
+        <h3>What people say after a piece finds <em>its home</em>.</h3>
+      </div>
+      <div class="testimonials-grid">
+        <figure class="testimonial reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote class="testimonial-quote">When our son was born, we wanted something truly special for his nursery. Michael crafted a beautiful bassinette that's as sturdy as it is gorgeous. Knowing it was made by hand makes it that much more meaningful &mdash; this is something we'll pass down for generations.</blockquote>
+          <figcaption class="testimonial-footer">
+            <span class="testimonial-attr">Tim F.</span>
+            <span class="testimonial-location">Perrysburg, Ohio</span>
+          </figcaption>
+          <span class="testimonial-product">Custom bassinette</span>
+        </figure>
+        <figure class="testimonial reveal">
+          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote class="testimonial-quote">We'd been searching for a kitchen table that felt like the heart of the home, and Michael delivered exactly that. The oak is absolutely stunning &mdash; the grain, the finish, the craftsmanship. Every time we sit down for dinner, someone comments on how beautiful it is.</blockquote>
+          <figcaption class="testimonial-footer">
+            <span class="testimonial-attr">Tom C.</span>
+            <span class="testimonial-location">Michigan</span>
+          </figcaption>
+          <span class="testimonial-product">Oak kitchen table</span>
+        </figure>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact" id="contact">
+      <div class="inner">
+        <div>
+          <span class="mono">&sect; 05 &mdash; Correspondence</span>
+          <h2>Tell me about the <em>tree,</em><br>or the <span class="barn">room</span> it's headed for.</h2>
+        </div>
+        <div class="side reveal">
+          <p>Most pieces begin with an email &mdash; a photo of a room, a rough dimension, a story about someone the piece is for. There's no form required. Just a note, and a patient reply.</p>
+          <a class="btn" href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com <span class="arr">&rarr;</span></a>
+        </div>
+      </div>
+
+      <div class="inner addr">
+        <div class="block">
+          <span class="mono">Workshop</span>
+          <span class="v">A red barn on a county road<br><em>Mount Vernon, Ohio 43050</em></span>
+        </div>
+        <div class="block">
+          <span class="mono">Visiting hours</span>
+          <span class="v">By appointment &mdash;<br><em>Thursdays &amp; Saturdays</em></span>
+        </div>
+        <div class="block">
+          <span class="mono">Elsewhere</span>
+          <span class="v"><a href="https://www.facebook.com/redbarnwoodturning/" target="_blank" rel="noopener noreferrer">Facebook &middot; @redbarnwoodturning</a><br><em>Journal &mdash; updated monthly</em></span>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+    </div>
+    <div class="lf">
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 

@@ -103,10 +103,15 @@
 }
 </script>
 
+<!-- Palette init (prevents FOUC) -->
+<script>
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+</script>
+
 <!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Favicon & Theme -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
@@ -118,239 +123,204 @@
 </head>
 <body>
 
-<!-- Skip link -->
 <a href="#main" class="skip-link">Skip to main content</a>
-
-<!-- Mobile overlay -->
 <div class="mobile-overlay" id="mobileOverlay"></div>
 
-<!-- NAVIGATION -->
-<nav id="nav" role="navigation" aria-label="Main navigation">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo" aria-label="Redbarn Wood Turning — Home">
-      <img src="1.svg" alt="" class="nav-logo-img" width="56" height="56">
-      <div class="nav-logo-text">Redbarn <span>Wood Turning</span></div>
-    </a>
-    <ul class="nav-links" id="navLinks" role="list">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-    <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
+<div class="page" id="top">
 
-<!-- PAGE HEADER -->
-<section class="page-header" id="main">
-  <div class="section-inner">
-    <div class="page-header-content reveal">
-      <div class="section-tag">Get in Touch</div>
-      <h1 class="page-title">Let's Talk About Your Next Piece</h1>
-      <p class="page-subtitle">Whether you have a custom project in mind or just want to learn more, I'd love to hear from you.</p>
+  <!-- MASTHEAD -->
+  <header class="mast" role="banner">
+    <div class="left" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="gallery.html">Gallery</a>
+      <a href="events.html">Events</a>
+      <a href="contact.html" class="active">Contact</a>
     </div>
-  </div>
-</section>
+    <div class="center">
+      <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
+        <img src="1.svg" alt="" width="32" height="32">
+        <span><em>Redbarn</em><span class="sub">Wood Turning</span></span>
+      </a>
+    </div>
+    <div class="right">
+      <span class="stamp"><span class="dot"></span> Workshop open by appt.</span>
+      <a href="contact.html" class="visit">Visit &rarr;</a>
+      <button type="button" id="paletteToggle" class="palette-toggle" aria-label="Toggle light/dark palette">
+        <svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <button class="nav-hamburger" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
 
-<!-- CONTACT SECTION -->
-<section class="contact">
-  <div class="section-inner">
-    <div class="contact-grid reveal">
+  <main id="main">
 
-      <!-- LEFT: Contact Info -->
-      <div class="contact-info">
-        <div class="section-tag">Contact Details</div>
-        <h2>Reach Out Anytime</h2>
-        <p>I'm happy to answer questions about custom work, pricing, lead times, or anything else. The best way to reach me is by email or through the form here.</p>
+    <!-- PAGE HEADER -->
+    <section class="page-header">
+      <span class="mono reveal">&sect; Correspondence &mdash; get in touch</span>
+      <h1 class="reveal">Tell me about<br>your <em>next piece</em>.</h1>
+      <p class="lede reveal">Whether you have a custom project in mind or just a question about the work &mdash; an email is the best place to start.</p>
+    </section>
 
-        <div class="contact-details">
-          <!-- Location -->
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div class="contact-text">
+    <!-- CONTACT -->
+    <section class="contact-page">
+      <div class="contact-grid reveal">
+
+        <!-- LEFT: Contact Info -->
+        <div class="contact-info">
+          <span class="mono">Reach out</span>
+          <h2>Just a <em>note</em> will do.</h2>
+          <p>I'm happy to answer questions about custom work, pricing, lead times, or anything else. The best way to reach me is by email &mdash; or through the form here, if that's easier.</p>
+
+          <div class="contact-details">
+            <div class="contact-item">
               <div class="contact-label">Location</div>
               <div class="contact-value">Mount Vernon, Ohio</div>
             </div>
-          </div>
-
-          <!-- Email -->
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
-            </div>
-            <div class="contact-text">
+            <div class="contact-item">
               <div class="contact-label">Email</div>
               <a href="mailto:michael@redbarnwoodturning.com" class="contact-value">michael@redbarnwoodturning.com</a>
             </div>
-          </div>
-
-          <!-- Facebook -->
-          <div class="contact-item">
-            <div class="contact-icon">
-              <svg viewBox="0 0 24 24" aria-hidden="true" width="24" height="24">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </div>
-            <div class="contact-text">
+            <div class="contact-item">
               <div class="contact-label">Facebook</div>
-              <a href="https://www.facebook.com/redbarnwoodturning/" target="_blank" rel="noopener noreferrer" class="contact-value">Redbarn Wood Turning</a>
+              <a href="https://www.facebook.com/redbarnwoodturning/" target="_blank" rel="noopener noreferrer" class="contact-value">@redbarnwoodturning</a>
+            </div>
+            <div class="contact-item">
+              <div class="contact-label">Visiting hours</div>
+              <div class="contact-value">By appointment &mdash; Thu &amp; Sat</div>
             </div>
           </div>
         </div>
-      </div>
 
-      <!-- RIGHT: Contact Form -->
-      <div class="contact-form-wrapper">
-        <h3 class="contact-form-title">Send a Message</h3>
+        <!-- RIGHT: Contact Form -->
+        <div class="contact-form-wrapper">
+          <h3 class="contact-form-title">Send a message</h3>
 
-        <!-- Hidden form success message (shown after submission) -->
-        <div class="form-success" id="formSuccess" style="display: none;">
-          <div class="form-success-icon">✓</div>
-          <div class="form-success-text">
-            <strong>Message Sent!</strong>
-            <p>Thanks for reaching out. I'll get back to you soon.</p>
+          <!-- Hidden form success message (shown after submission) -->
+          <div class="form-success" id="formSuccess">
+            <div class="form-success-icon">&#10003;</div>
+            <div class="form-success-text">
+              <strong>Message sent</strong>
+              <p>Thanks for reaching out &mdash; I'll get back to you soon.</p>
+            </div>
           </div>
+
+          <!-- Contact form -->
+          <form id="contactForm" class="contact-form" action="https://formsubmit.co/michael@redbarnwoodturning.com" method="POST">
+            <!-- Hidden fields -->
+            <input type="hidden" name="_subject" value="New message from redbarnwoodturning.com">
+            <input type="hidden" name="_captcha" value="false">
+            <input type="hidden" name="_next" value="https://redbarnwoodturning.com/contact.html?sent=true">
+
+            <!-- Honeypot (anti-spam) -->
+            <input type="text" name="_honey" style="display: none;">
+
+            <!-- Row: Name + Email -->
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+            </div>
+
+            <!-- Interest dropdown -->
+            <div class="form-group">
+              <label for="interest">What are you interested in?</label>
+              <select id="interest" name="interest">
+                <option value="">Select a category&hellip;</option>
+                <option value="Bowls & Vessels">Bowls &amp; vessels</option>
+                <option value="Pens & Small Items">Pens &amp; small items</option>
+                <option value="Furniture & Larger Pieces">Furniture &amp; larger pieces</option>
+                <option value="Custom Commission">Custom commission</option>
+                <option value="General Inquiry">General inquiry</option>
+              </select>
+            </div>
+
+            <!-- Message -->
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about what you're looking for…" required></textarea>
+            </div>
+
+            <!-- Submit button -->
+            <button type="submit" class="btn btn-submit">Send message <span class="arr">&rarr;</span></button>
+          </form>
         </div>
 
-        <!-- Contact form -->
-        <form id="contactForm" class="contact-form" action="https://formsubmit.co/michael@redbarnwoodturning.com" method="POST">
-          <!-- Hidden fields -->
-          <input type="hidden" name="_subject" value="New message from redbarnwoodturning.com">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="https://redbarnwoodturning.com/contact.html?sent=true">
-
-          <!-- Honeypot (anti-spam) -->
-          <input type="text" name="_honey" style="display: none;">
-
-          <!-- Row: Name + Email -->
-          <div class="form-row">
-            <div class="form-group">
-              <label for="name">Name</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-          </div>
-
-          <!-- Interest dropdown -->
-          <div class="form-group">
-            <label for="interest">What are you interested in?</label>
-            <select id="interest" name="interest">
-              <option value="">Select a category...</option>
-              <option value="Bowls & Vessels">Bowls & Vessels</option>
-              <option value="Pens & Small Items">Pens & Small Items</option>
-              <option value="Furniture & Larger Pieces">Furniture & Larger Pieces</option>
-              <option value="Custom Commission">Custom Commission</option>
-              <option value="General Inquiry">General Inquiry</option>
-            </select>
-          </div>
-
-          <!-- Message -->
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" placeholder="Tell me about what you're looking for..." required></textarea>
-          </div>
-
-          <!-- Submit button -->
-          <button type="submit" class="btn btn-primary btn-submit">Send Message</button>
-        </form>
       </div>
+    </section>
 
-    </div>
-  </div>
-</section>
+    <!-- FAQ -->
+    <section class="faq">
+      <div class="faq-head reveal">
+        <h3>Frequently <em>asked</em>.</h3>
+        <span class="mono">&sect; Questions &amp; answers</span>
+      </div>
+      <div class="faq-list reveal">
+        <details class="faq-item">
+          <summary>How do I commission a custom piece?</summary>
+          <p>Reach out by email at <a href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com</a> or through the contact form above. Include what you have in mind &mdash; the type of piece, approximate size, any wood species you prefer, and a rough timeline. I'll respond with questions, suggestions, and a price range.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does a custom piece take?</summary>
+          <p>It depends on the piece and where the wood is in its drying cycle. Furniture built from pre-dried stock usually takes two to four months. Turned bowls starting from freshly felled wood can take 12 to 18 months because the wood has to air-dry between rough turning and finish turning. I'll give you an honest timeline before we start.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What does a custom bowl or table cost?</summary>
+          <p>Pricing depends on size, species, complexity, and finish. Small turned bowls start around $60 to $150. Dining tables typically range from $1,800 to $4,500 depending on size and joinery. I'll quote each project individually after we discuss what you're looking for.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Where does the wood come from?</summary>
+          <p>Most of my wood is locally sourced from Knox County, Ohio and surrounding areas &mdash; storm-felled trees, trees taken down for construction, and logs that would otherwise become firewood. Primary species include black walnut, white oak, red oak, cherry, sugar maple, and ash.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do you ship?</summary>
+          <p>Yes. Smaller pieces ship via carrier. Large furniture is typically freight-shipped or delivered locally in Ohio and neighboring states &mdash; we'll work out the best option once the piece is finished.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Are your bowls food safe?</summary>
+          <p>Yes. Bowls intended for food use are finished with food-safe mineral oil and beeswax. They're safe for dry goods like fruit, bread, nuts, or salads. Hand wash only &mdash; never put a turned wood bowl in the dishwasher.</p>
+        </details>
+      </div>
+    </section>
 
-<!-- FAQ SECTION -->
-<section class="faq">
-  <div class="section-inner">
-    <div class="section-header reveal">
-      <div class="section-tag">Frequently Asked</div>
-      <h2 class="section-title">Common Questions</h2>
-    </div>
-    <div class="faq-list reveal">
-      <details class="faq-item">
-        <summary>How do I commission a custom piece?</summary>
-        <p>Reach out by email at <a href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com</a> or through the contact form above. Include what you have in mind — the type of piece, approximate size, any wood species you prefer, and a rough timeline. I'll respond with questions, suggestions, and a price range.</p>
-      </details>
-      <details class="faq-item">
-        <summary>How long does a custom piece take?</summary>
-        <p>It depends on the piece and where the wood is in its drying cycle. Furniture built from pre-dried stock usually takes two to four months. Turned bowls starting from freshly felled wood can take 12 to 18 months because the wood has to air-dry between rough turning and finish turning. I'll give you an honest timeline before we start.</p>
-      </details>
-      <details class="faq-item">
-        <summary>What does a custom bowl or table cost?</summary>
-        <p>Pricing depends on size, species, complexity, and finish. Small turned bowls start around $60 to $150. Dining tables typically range from $1,800 to $4,500 depending on size and joinery. I'll quote each project individually after we discuss what you're looking for.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Where does the wood come from?</summary>
-        <p>Most of my wood is locally sourced from Knox County, Ohio and surrounding areas — storm-felled trees, trees taken down for construction, and logs that would otherwise become firewood. Primary species include black walnut, white oak, red oak, cherry, sugar maple, and ash.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Do you ship?</summary>
-        <p>Yes. Smaller pieces ship via carrier. Large furniture is typically freight-shipped or delivered locally in Ohio and neighboring states — we'll work out the best option once the piece is finished.</p>
-      </details>
-      <details class="faq-item">
-        <summary>Are your bowls food safe?</summary>
-        <p>Yes. Bowls intended for food use are finished with food-safe mineral oil and beeswax. They're safe for dry goods like fruit, bread, nuts, or salads. Hand wash only — never put a turned wood bowl in the dishwasher.</p>
-      </details>
-    </div>
-  </div>
-</section>
+  </main>
 
-<!-- CTA SECTION -->
-<section class="cta-section">
-  <div class="section-inner">
-    <div class="cta-content reveal">
-      <h2>Have a quick question?</h2>
-      <p>Feel free to reach out directly at <a href="mailto:michael@redbarnwoodturning.com">michael@redbarnwoodturning.com</a> or find me on <a href="https://www.facebook.com/redbarnwoodturning/" target="_blank" rel="noopener noreferrer">Facebook</a>.</p>
+  <footer role="contentinfo">
+    <div class="lf">
+      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
     </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer role="contentinfo">
-  <div class="footer-inner">
-    <div class="footer-logo">
-      <img src="8.svg" alt="Redbarn Wood Turning" width="180" height="48">
-    </div>
-    <div class="footer-links">
-      <a href="index.html">Home</a>
+    <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
-    <div class="footer-copy">&copy; 2026 Redbarn Wood Turning. All rights reserved.</div>
-  </div>
-</footer>
+  </footer>
+</div>
 
 <script src="script.js"></script>
 <script>
   // ---- Form success detection ----
-  const urlParams = new URLSearchParams(window.location.search);
-  const formSuccess = document.getElementById('formSuccess');
-  const contactForm = document.getElementById('contactForm');
+  (function(){
+    const urlParams = new URLSearchParams(window.location.search);
+    const formSuccess = document.getElementById('formSuccess');
+    const contactForm = document.getElementById('contactForm');
 
-  if (urlParams.has('sent') && urlParams.get('sent') === 'true') {
-    // Hide form, show success message
-    contactForm.style.display = 'none';
-    formSuccess.style.display = 'block';
-
-    // Clean URL (remove ?sent=true)
-    window.history.replaceState({}, document.title, window.location.pathname);
-  }
+    if (urlParams.has('sent') && urlParams.get('sent') === 'true') {
+      contactForm.style.display = 'none';
+      formSuccess.classList.add('show');
+      window.history.replaceState({}, document.title, window.location.pathname);
+    }
+  })();
 </script>
 
 </body>
