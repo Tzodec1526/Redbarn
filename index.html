@@ -8,6 +8,9 @@
 <meta name="keywords" content="wood turning, handcrafted furniture, custom woodwork, Mount Vernon Ohio, hand-turned bowls, wooden pens, live edge table, custom commission, woodworking">
 <link rel="canonical" href="https://redbarnwoodturning.com">
 
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+
 <!-- Open Graph -->
 <meta property="og:title" content="Redbarn Wood Turning — Handcrafted Woodwork">
 <meta property="og:description" content="One-of-a-kind bowls, pens, furniture, and custom woodwork by Michael Cedoz in Mount Vernon, Ohio.">
@@ -201,7 +204,7 @@
           <span class="tag">Plate I</span>
           <span>The workshop &mdash; Mount Vernon</span>
         </div>
-        <img src="hero-barn-watercolor.png" alt="Watercolor painting of the Redbarn workshop — a red gambrel barn in Mount Vernon, Ohio" width="1168" height="880">
+        <img src="hero-barn-watercolor.png" alt="Watercolor painting of the Redbarn workshop — a red gambrel barn in Mount Vernon, Ohio" width="1168" height="880" loading="lazy">
         <div class="logo-stamp" aria-hidden="true">
           <img src="1.svg" alt="">
         </div>
@@ -237,7 +240,7 @@
         <figure class="portrait">
           <picture>
             <source srcset="about-michael.webp" type="image/webp">
-            <img src="about-michael.jpg" alt="Michael Cedoz in his Mount Vernon workshop" width="500" height="600">
+            <img src="about-michael.jpg" alt="Michael Cedoz in his Mount Vernon workshop" width="500" height="600" loading="lazy">
           </picture>
           <figcaption class="cap">Michael Cedoz &mdash; maker, Knox County</figcaption>
         </figure>
@@ -459,7 +462,7 @@
   <footer role="contentinfo">
     <div class="lf">
       <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
-      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+      <span class="mono">&copy; <span id="year">2026</span> &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
     </div>
     <div class="lf">
       <a href="about.html">About</a>
@@ -471,6 +474,10 @@
 </div>
 
 <script src="script.js"></script>
+<script>
+  // Dynamic copyright year
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 
 </body>
 </html>

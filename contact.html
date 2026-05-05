@@ -8,6 +8,9 @@
 <meta name="keywords" content="contact, custom wood furniture, commission, inquiry, Mount Vernon Ohio, woodworking">
 <link rel="canonical" href="https://redbarnwoodturning.com/contact.html">
 
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
+
 <!-- Open Graph -->
 <meta property="og:title" content="Contact Redbarn Wood Turning">
 <meta property="og:description" content="Get in touch with Michael Cedoz for custom projects, pricing inquiries, and commissions.">
@@ -222,18 +225,18 @@
             <div class="form-row">
               <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" required>
+                <input type="text" id="name" name="name" required aria-required="true">
               </div>
               <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
+                <input type="email" id="email" name="email" required aria-required="true">
               </div>
             </div>
 
             <!-- Interest dropdown -->
             <div class="form-group">
               <label for="interest">What are you interested in?</label>
-              <select id="interest" name="interest">
+              <select id="interest" name="interest" aria-label="Interest category">
                 <option value="">Select a category&hellip;</option>
                 <option value="Bowls & Vessels">Bowls &amp; vessels</option>
                 <option value="Pens & Small Items">Pens &amp; small items</option>
@@ -246,7 +249,7 @@
             <!-- Message -->
             <div class="form-group">
               <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about what you're looking for…" required></textarea>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about what you're looking for…" required aria-required="true"></textarea>
             </div>
 
             <!-- Submit button -->
@@ -282,11 +285,11 @@
         </details>
         <details class="faq-item">
           <summary>Do you ship?</summary>
-          <p>Yes. Smaller pieces ship via carrier. Large furniture is typically freight-shipped or delivered locally in Ohio and neighboring states &mdash; we'll work out the best option once the piece is finished.</p>
+          <p>Yes. Smaller pieces ship via carrier. Large furniture is typically freight-shipped or delivered locally in Ohio and neighboring states — we'll work out the best option once the piece is finished.</p>
         </details>
         <details class="faq-item">
           <summary>Are your bowls food safe?</summary>
-          <p>Yes. Bowls intended for food use are finished with food-safe mineral oil and beeswax. They're safe for dry goods like fruit, bread, nuts, or salads. Hand wash only &mdash; never put a turned wood bowl in the dishwasher.</p>
+          <p>Yes. Bowls intended for food use are finished with food-safe mineral oil and beeswax. They're safe for dry goods like fruit, bread, nuts, or salads. Hand wash only — never put a turned wood bowl in the dishwasher.</p>
         </details>
       </div>
     </section>
@@ -296,7 +299,7 @@
   <footer role="contentinfo">
     <div class="lf">
       <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
-      <span class="mono">&copy; MMXXVI &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
+      <span class="mono">&copy; <span id="year">2026</span> &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
     </div>
     <div class="lf">
       <a href="about.html">About</a>
@@ -309,7 +312,7 @@
 
 <script src="script.js"></script>
 <script>
-  // ---- Form success detection ----
+  // ---- Form success detection + Dynamic year ----
   (function(){
     const urlParams = new URLSearchParams(window.location.search);
     const formSuccess = document.getElementById('formSuccess');
@@ -320,6 +323,10 @@
       formSuccess.classList.add('show');
       window.history.replaceState({}, document.title, window.location.pathname);
     }
+
+    // Dynamic copyright
+    const yearEl = document.getElementById('year');
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
   })();
 </script>
 

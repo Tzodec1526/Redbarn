@@ -1,0 +1,25 @@
+{
+  "name": "Redbarn Wood Turning",
+  "short_name": "Redbarn",
+  "description": "Handcrafted woodwork by Michael Cedoz in Mount Vernon, Ohio — bowls, pens, furniture & custom commissions.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f0e6",
+  "theme_color": "#8B2500",
+  "icons": [
+    {
+      "src": "1.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ],
+  "categories": ["art", "lifestyle", "shopping"],
+  "lang": "en-US",
+  "orientation": "any"
+}
