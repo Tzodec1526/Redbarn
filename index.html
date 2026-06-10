@@ -208,7 +208,10 @@
           <span class="tag">Plate I</span>
           <span>The workshop &mdash; Mount Vernon</span>
         </div>
-        <img src="hero-barn-watercolor.png" alt="Watercolor painting of the Redbarn workshop — a red gambrel barn in Mount Vernon, Ohio" width="1168" height="880" loading="lazy">
+        <picture>
+          <source srcset="hero-barn-watercolor.webp" type="image/webp">
+          <img src="hero-barn-watercolor.png" alt="Watercolor painting of the Redbarn workshop — a red gambrel barn in Mount Vernon, Ohio" width="1168" height="880" fetchpriority="high">
+        </picture>
         <div class="logo-stamp" aria-hidden="true">
           <img src="1.svg" alt="">
         </div>
@@ -274,7 +277,7 @@
           Everything that leaves the shop has been handled &mdash; milled, stacked, dried, re-stacked, planed, chiseled, sanded by the same pair of hands. There are no apprentices. There is no CNC. There is a kettle, a radio that mostly works, and two shop dogs &mdash; Kodiak and Lizzie &mdash; who supervise.
         </p>
         <p>
-          <a href="about.html" style="color: var(--barn); text-decoration: underline;">Read the full story &rarr;</a>
+          <a href="about.html">Read the full story &rarr;</a>
         </p>
 
         <div class="sig">&mdash; Michael Cedoz</div>
@@ -473,7 +476,7 @@
 
   <footer role="contentinfo">
     <div class="lf">
-      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="wordmark"><em>Redbarn Wood Turning</em></span>
       <span class="mono">&copy; <span id="year">2026</span> &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
     </div>
     <div class="lf">
@@ -486,10 +489,6 @@
 </div>
 
 <script src="script.js"></script>
-<script>
-  // Dynamic copyright year
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
 
 </body>
 </html>

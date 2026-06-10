@@ -298,7 +298,7 @@
 
   <footer role="contentinfo">
     <div class="lf">
-      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="wordmark"><em>Redbarn Wood Turning</em></span>
       <span class="mono">&copy; <span id="year">2026</span> &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
     </div>
     <div class="lf">
@@ -312,7 +312,7 @@
 
 <script src="script.js"></script>
 <script>
-  // ---- Form success detection + Dynamic year ----
+  // ---- Form success detection ----
   (function(){
     const urlParams = new URLSearchParams(window.location.search);
     const formSuccess = document.getElementById('formSuccess');
@@ -323,10 +323,6 @@
       formSuccess.classList.add('show');
       window.history.replaceState({}, document.title, window.location.pathname);
     }
-
-    // Dynamic copyright
-    const yearEl = document.getElementById('year');
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
   })();
 </script>
 

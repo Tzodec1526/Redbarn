@@ -99,25 +99,25 @@
     </section>
 
     <!-- FILTERS -->
-    <div class="gallery-filters reveal" style="text-align: center; margin-bottom: 24px;">
-      <button class="btn-outline active" data-filter="all">All</button>
-      <button class="btn-outline" data-filter="bowls">Bowls &amp; Vessels</button>
-      <button class="btn-outline" data-filter="furniture">Furniture</button>
-      <button class="btn-outline" data-filter="pens">Pens &amp; Small</button>
-      <button class="btn-outline" data-filter="stoppers">Stoppers &amp; Pipes</button>
-      <button class="btn-outline" data-filter="outdoor">Outdoor &amp; Kitchen</button>
+    <div class="gallery-filters reveal" role="group" aria-label="Filter gallery by category">
+      <button class="btn-outline active" data-filter="all" aria-pressed="true">All</button>
+      <button class="btn-outline" data-filter="bowls" aria-pressed="false">Bowls &amp; Vessels</button>
+      <button class="btn-outline" data-filter="furniture" aria-pressed="false">Furniture</button>
+      <button class="btn-outline" data-filter="pens" aria-pressed="false">Pens &amp; Small</button>
+      <button class="btn-outline" data-filter="stoppers" aria-pressed="false">Stoppers &amp; Pipes</button>
+      <button class="btn-outline" data-filter="outdoor" aria-pressed="false">Outdoor &amp; Kitchen</button>
     </div>
 
     <!-- GALLERY -->
     <section class="gallery-page">
       <div class="gallery-page-grid reveal">
-        <div class="gallery-item featured" data-category="furniture" role="button" tabindex="0" aria-label="View oak kitchen table top">
+        <div class="gallery-item tall" data-category="furniture" role="button" tabindex="0" aria-label="View oak kitchen table top">
           <picture>
             <source srcset="gallery-table-top.webp" type="image/webp">
             <img src="gallery-table-top.jpg" alt="Oak kitchen table top view showing cathedral grain pattern" loading="lazy" width="500" height="500">
           </picture>
         </div>
-        <div class="gallery-item featured" data-category="bowls" role="button" tabindex="0" aria-label="View a grouping of six hand-turned bowls in the workshop">
+        <div class="gallery-item tall" data-category="bowls" role="button" tabindex="0" aria-label="View a grouping of six hand-turned bowls in the workshop">
           <picture>
             <source srcset="gallery-bowl-group.webp" type="image/webp">
             <img src="gallery-bowl-group.jpg" alt="A grouping of six hand-turned bowls in the Redbarn workshop &mdash; maple, cherry, and walnut staged on maroon cloth" loading="lazy" width="500" height="500">
@@ -302,7 +302,7 @@
 
   <footer role="contentinfo">
     <div class="lf">
-      <span class="wordmark" style="font-size: 16px;"><em>Redbarn Wood Turning</em></span>
+      <span class="wordmark"><em>Redbarn Wood Turning</em></span>
       <span class="mono">&copy; <span id="year">2026</span> &middot; Michael Cedoz &middot; Mount Vernon, OH</span>
     </div>
     <div class="lf">
@@ -320,15 +320,21 @@
   (function(){
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
-    const galleryItems = document.querySelectorAll('.gallery-item');
-    let currentIndex = 0;
+    const closeButton = document.querySelector('.lightbox-close');
+    const galleryItems = [...document.querySelectorAll('.gallery-item')];
+    let currentItem = null;
+    let lastFocused = null;
 
     // Category filters
     const filterButtons = document.querySelectorAll('.gallery-filters .btn-outline');
     filterButtons.forEach(btn => {
       btn.addEventListener('click', () => {
-        filterButtons.forEach(b => b.classList.remove('active'));
+        filterButtons.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-pressed', 'false');
+        });
         btn.classList.add('active');
+        btn.setAttribute('aria-pressed', 'true');
 
         const filter = btn.dataset.filter;
         galleryItems.forEach(item => {
@@ -341,47 +347,52 @@
       });
     });
 
-    function openLightbox(index) {
-      currentIndex = index;
-      const img = galleryItems[index].querySelector('img');
-      lightboxImg.src = img.src;
+    // Lightbox navigates only the items the active filter shows
+    function visibleItems() {
+      return galleryItems.filter(item => item.style.display !== 'none');
+    }
+
+    function showItem(item) {
+      currentItem = item;
+      const img = item.querySelector('img');
+      lightboxImg.src = img.currentSrc || img.src;
       lightboxImg.alt = img.alt;
+    }
+
+    function openLightbox(item) {
+      lastFocused = document.activeElement;
+      showItem(item);
       lightbox.classList.add('active');
       document.body.style.overflow = 'hidden';
+      closeButton.focus();
     }
 
     function closeLightbox() {
       lightbox.classList.remove('active');
       document.body.style.overflow = '';
+      if (lastFocused) lastFocused.focus();
     }
 
-    function showPrev() {
-      currentIndex = (currentIndex - 1 + galleryItems.length) % galleryItems.length;
-      const img = galleryItems[currentIndex].querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
+    function step(delta) {
+      const items = visibleItems();
+      if (!items.length) return;
+      const index = Math.max(0, items.indexOf(currentItem));
+      showItem(items[(index + delta + items.length) % items.length]);
     }
 
-    function showNext() {
-      currentIndex = (currentIndex + 1) % galleryItems.length;
-      const img = galleryItems[currentIndex].querySelector('img');
-      lightboxImg.src = img.src;
-      lightboxImg.alt = img.alt;
-    }
-
-    galleryItems.forEach((item, index) => {
-      item.addEventListener('click', () => openLightbox(index));
+    galleryItems.forEach(item => {
+      item.addEventListener('click', () => openLightbox(item));
       item.addEventListener('keydown', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          openLightbox(index);
+          openLightbox(item);
         }
       });
     });
 
-    document.querySelector('.lightbox-close').addEventListener('click', closeLightbox);
-    document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-    document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
+    closeButton.addEventListener('click', closeLightbox);
+    document.querySelector('.lightbox-prev').addEventListener('click', (e) => { e.stopPropagation(); step(-1); });
+    document.querySelector('.lightbox-next').addEventListener('click', (e) => { e.stopPropagation(); step(1); });
 
     lightbox.addEventListener('click', (e) => {
       if (e.target === lightbox) closeLightbox();
@@ -390,8 +401,8 @@
     document.addEventListener('keydown', (e) => {
       if (!lightbox.classList.contains('active')) return;
       if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
+      if (e.key === 'ArrowLeft') step(-1);
+      if (e.key === 'ArrowRight') step(1);
     });
   })();
 </script>

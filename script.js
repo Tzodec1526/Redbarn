@@ -51,6 +51,15 @@ document.documentElement.classList.add('js');
 
   overlay.addEventListener('click', closeNav);
   navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeNav));
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navLinks.classList.contains('show')) closeNav();
+  });
+})();
+
+// ---- Footer year ----
+(function(){
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
 })();
 
 // ---- Scroll reveal ----
@@ -62,7 +71,9 @@ document.documentElement.classList.add('js');
         io.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  }, { threshold: 0, rootMargin: '0px 0px -40px 0px' });
+  // threshold 0: a percentage threshold never fires for elements much taller
+  // than the viewport (e.g. the gallery grid), leaving them invisible
 
   document.querySelectorAll('.reveal').forEach(el => io.observe(el));
 })();

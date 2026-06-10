@@ -39,7 +39,9 @@ html[data-palette="ink"] {
 /* ---- RESET + BASE ---- */
 *, *::before, *::after { box-sizing: border-box; }
 html, body { margin: 0; padding: 0; }
-html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; color-scheme: light; }
+html[data-palette="ink"] { color-scheme: dark; }
+figure { margin: 0; }
 
 body {
   background: var(--paper);
@@ -54,6 +56,13 @@ body {
 ::selection { background: var(--barn); color: var(--paper); }
 img { max-width: 100%; height: auto; display: block; }
 a { color: inherit; }
+
+a:focus-visible, button:focus-visible, [role="button"]:focus-visible,
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--barn);
+  outline-offset: 2px;
+}
 
 /* paper grain overlay */
 body::before {
@@ -116,6 +125,7 @@ html[data-palette="ink"] body::before {
   font-family: var(--sans);
   font-size: 13px;
   letter-spacing: 0.06em;
+  white-space: nowrap;
   transition: color 0.2s;
 }
 .mast a:hover { color: var(--barn); }
@@ -185,6 +195,10 @@ html[data-palette="ink"] .palette-toggle .sun { display: block; }
   background: none; border: none; cursor: pointer;
   width: 28px; height: 20px; position: relative; z-index: 1001;
   padding: 0;
+}
+.nav-hamburger::after {
+  /* extend the tap target to ~44px without changing layout */
+  content: ""; position: absolute; inset: -12px;
 }
 .nav-hamburger span {
   display: block; width: 100%; height: 2px;
@@ -343,11 +357,16 @@ h1.hero-title .amp { font-family: var(--serif); font-style: italic; color: var(-
   background: radial-gradient(circle, oklch(0.72 0.06 55 / 0.18) 0%, transparent 70%);
   z-index: 1; pointer-events: none;
 }
+.hero-figure > picture,
 .hero-figure > img {
   position: absolute; inset: 0;
   width: 100%; height: 100%;
   object-fit: contain;
   z-index: 2;
+}
+.hero-figure > picture img {
+  width: 100%; height: 100%;
+  object-fit: contain;
 }
 .hero-figure .frame-label {
   position: absolute;
@@ -357,11 +376,17 @@ h1.hero-title .amp { font-family: var(--serif); font-style: italic; color: var(-
   font-size: 10px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--ink-soft);
+  /* fixed ink: the frame stays light in both palettes */
+  color: oklch(0.4 0.02 50);
   z-index: 3;
 }
+.hero-figure .frame-label span + span {
+  /* translucent paper chip so the caption stays readable over the painting */
+  background: oklch(0.98 0.01 82 / 0.75);
+  padding: 3px 7px;
+}
 .hero-figure .frame-label .tag {
-  border: 1px solid var(--hair);
+  border: 1px solid oklch(0.78 0.02 70);
   padding: 3px 7px;
   background: oklch(0.98 0.01 82);
 }
@@ -370,10 +395,10 @@ h1.hero-title .amp { font-family: var(--serif); font-style: italic; color: var(-
   right: 18px; bottom: 18px;
   width: 64px; height: 64px;
   background: oklch(0.98 0.01 82);
-  border: 1px solid var(--ink);
+  border: 1px solid oklch(0.22 0.018 45);
   padding: 6px;
   display: flex; align-items: center; justify-content: center;
-  box-shadow: 4px 4px 0 var(--ink);
+  box-shadow: 4px 4px 0 oklch(0.22 0.018 45);
   z-index: 3;
 }
 .hero-figure .logo-stamp img {
@@ -465,7 +490,7 @@ html[data-palette="ink"] .hero-figure {
   position: relative;
   aspect-ratio: 4/5;
   background: var(--paper-2);
-  overflow: hidden;
+  /* no overflow:hidden — the caption hangs 28px below the frame */
 }
 .portrait picture,
 .portrait img {
@@ -494,6 +519,7 @@ html[data-palette="ink"] .hero-figure {
   color: var(--ink-2);
 }
 .about-body p { margin: 0 0 1em; break-inside: avoid; }
+.about-body p a { color: var(--barn); text-decoration: underline; }
 .about-body p:first-child::first-letter {
   font-family: var(--serif);
   font-weight: 500;
@@ -816,6 +842,10 @@ html[data-palette="ink"] .hero-figure {
 .contact {
   margin: 0 calc(-1 * var(--page-pad-x));
   padding: 120px var(--page-pad-x);
+  /* pin to the light-palette ink/paper so the section keeps its designed
+     dark look in both palettes (its accent colors are tuned for dark) */
+  --ink: oklch(0.22 0.018 45);
+  --paper: oklch(0.955 0.015 82);
   background: var(--ink);
   color: var(--paper);
   position: relative;
@@ -884,6 +914,7 @@ footer {
   flex-wrap: wrap;
 }
 footer .mono { color: var(--ink-soft); }
+footer .wordmark { font-size: 16px; }
 footer .lf { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; }
 footer a {
   color: var(--ink);
@@ -922,6 +953,18 @@ footer a:hover { color: var(--barn); }
 }
 
 /* ---- GALLERY PAGE ---- */
+.gallery-filters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.gallery-filters .btn-outline.active {
+  background: var(--ink);
+  border-color: var(--ink);
+  color: var(--paper);
+}
 .gallery-page {
   padding: 72px 0 96px;
 }
@@ -929,6 +972,7 @@ footer a:hover { color: var(--barn); }
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 300px;
+  grid-auto-flow: dense;
   gap: 16px;
 }
 .gallery-item {
@@ -946,6 +990,9 @@ footer a:hover { color: var(--barn); }
 }
 .gallery-item:hover img { transform: scale(1.04); }
 .gallery-item.featured { grid-column: span 2; grid-row: span 2; }
+/* tall: portrait photos get a portrait-shaped tile (~3:4) instead of a
+   landscape crop that hides half the image */
+.gallery-item.tall { grid-row: span 2; }
 
 /* Lightbox */
 .lightbox {
@@ -1027,7 +1074,7 @@ footer a:hover { color: var(--barn); }
   color: var(--ink);
   letter-spacing: -0.01em;
 }
-.event-info h3 {
+.event-info h2 {
   font-family: var(--serif);
   font-weight: 500;
   font-size: 26px;
@@ -1055,13 +1102,13 @@ footer a:hover { color: var(--barn); }
   text-transform: uppercase;
   color: var(--ink-soft);
 }
-.event-admission {
+.event-info .event-admission {
   font-family: var(--mono);
   font-size: 10px;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--ink-soft);
-  margin: 12px 0 14px !important;
+  margin: 12px 0 14px;
 }
 .event-badge {
   display: inline-block;
@@ -1076,6 +1123,15 @@ footer a:hover { color: var(--barn); }
 }
 .event-badge-upcoming { color: var(--barn); border-color: var(--barn); }
 .event-badge-past { color: var(--ink-soft); }
+.events-note {
+  text-align: center;
+  font-family: var(--serif);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink-2);
+  margin: 48px 0 0;
+}
+.events-note a { color: var(--barn); text-decoration: underline; }
 
 /* ---- CONTACT PAGE ---- */
 .contact-page {
@@ -1601,6 +1657,7 @@ a.contact-value:hover { color: var(--barn); }
   .strip-grid { grid-template-columns: 1fr; }
   .gallery-page-grid { grid-template-columns: 1fr 1fr; grid-auto-rows: 200px; gap: 12px; }
   .gallery-page-grid .gallery-item.featured { grid-column: span 2; grid-row: span 1; }
+  .gallery-page-grid .gallery-item.tall { grid-row: span 1; }
   .form-row { grid-template-columns: 1fr; }
   .contact { padding: 80px var(--page-pad-x); }
   .cta-row { flex-direction: column; align-items: stretch; }
@@ -1611,6 +1668,11 @@ a.contact-value:hover { color: var(--barn); }
   .event-date { border-right: 0; border-bottom: 1px solid var(--hair); padding: 0 0 12px; }
   .event-badge { grid-column: 1; }
   .contact-form-wrapper { padding: 28px 20px; }
+}
+
+@media (max-width: 480px) {
+  /* keep the masthead on one line on small phones */
+  .wordmark .sub { display: none; }
 }
 
 /* Reduced motion */
