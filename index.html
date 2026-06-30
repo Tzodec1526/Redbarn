@@ -110,7 +110,7 @@
 
 <!-- Palette init (prevents FOUC) -->
 <script>
-(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+(function(){ try { document.documentElement.classList.add('js'); var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
 </script>
 
 <!-- Preconnect & Fonts -->
@@ -163,9 +163,30 @@
 
   <main id="main">
 
-    <!-- HERO -->
+    <!-- HERO — full-bleed watercolor, editorial overlay -->
     <section class="hero">
-      <div>
+      <div class="hero-bg" aria-hidden="true">
+        <picture>
+          <source srcset="hero-barn-watercolor.webp" type="image/webp">
+          <img src="hero-barn-watercolor.png" alt="" width="1168" height="880" fetchpriority="high">
+        </picture>
+        <div class="hero-veil"></div>
+      </div>
+
+      <div class="hero-frame-tag" aria-hidden="true">
+        <span class="tag">Plate I</span>
+        <span>The workshop &mdash; Mount Vernon</span>
+      </div>
+
+      <div class="hero-stamp" aria-hidden="true">
+        <img src="1.svg" alt="">
+      </div>
+
+      <div class="hero-pencil" aria-hidden="true">
+        en plein air<small>Knox County &middot; autumn</small>
+      </div>
+
+      <div class="hero-inner">
         <div class="eyebrow reveal">
           <span class="bar"></span>
           <span>Est. the slow way &nbsp;&middot;&nbsp; Knox County</span>
@@ -173,9 +194,10 @@
         </div>
 
         <h1 class="hero-title reveal">
-          Wood with a<br>
-          <span class="i">memory,</span><span class="amp"> &amp; </span><br>
-          hands that <span class="i">listen.</span>
+          <span class="line"><span>Wood with a</span></span>
+          <span class="line"><span><span class="i">memory,</span><span class="amp"> &amp; </span></span></span>
+          <span class="line"><span>hands that</span></span>
+          <span class="line"><span class="i">listen.</span></span>
         </h1>
 
         <p class="hero-lede reveal">
@@ -203,22 +225,10 @@
         </div>
       </div>
 
-      <figure class="hero-figure reveal">
-        <div class="frame-label">
-          <span class="tag">Plate I</span>
-          <span>The workshop &mdash; Mount Vernon</span>
-        </div>
-        <picture>
-          <source srcset="hero-barn-watercolor.webp" type="image/webp">
-          <img src="hero-barn-watercolor.png" alt="Watercolor painting of the Redbarn workshop — a red gambrel barn in Mount Vernon, Ohio" width="1168" height="880" fetchpriority="high">
-        </picture>
-        <div class="logo-stamp" aria-hidden="true">
-          <img src="1.svg" alt="">
-        </div>
-        <div class="pencil-note" aria-hidden="true">
-          en plein air<small>Knox County &middot; autumn</small>
-        </div>
-      </figure>
+      <a class="hero-scroll" href="#about" aria-label="Scroll to content">
+        <span class="mono">Scroll</span>
+        <span class="scroll-line" aria-hidden="true"></span>
+      </a>
     </section>
 
     <!-- RIBBON -->
