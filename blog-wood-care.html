@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>How to Care for Your Handmade Wood Piece | Redbarn Wood Turning</title>
 <meta name="description" content="Simple care tips for handmade wood furniture, turned bowls, and pens. How to maintain hardwax oil finishes, prevent damage, and keep your piece looking great.">
-<meta name="keywords" content="wood furniture care, hardwax oil maintenance, turned bowl care, wood pen care, handmade wood maintenance">
 <link rel="canonical" href="https://redbarnwoodturning.com/blog-wood-care.html">
 
 <!-- PWA Manifest -->
@@ -61,7 +60,7 @@
   "@type": "BreadcrumbList",
   "itemListElement": [
     { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://redbarnwoodturning.com/" },
-    { "@type": "ListItem", "position": 2, "name": "About", "item": "https://redbarnwoodturning.com/about.html" },
+    { "@type": "ListItem", "position": 2, "name": "Journal", "item": "https://redbarnwoodturning.com/journal.html" },
     { "@type": "ListItem", "position": 3, "name": "Wood Care Guide", "item": "https://redbarnwoodturning.com/blog-wood-care.html" }
   ]
 }
@@ -69,17 +68,18 @@
 
 <!-- Palette init (prevents FOUC) -->
 <script>
-(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+(function(){ try { document.documentElement.classList.add('js'); var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
 </script>
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- CSS -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#8B2500">
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -91,13 +91,14 @@
 <div class="page" id="top">
 
   <header class="mast" role="banner">
-    <div class="left" id="navLinks">
+    <nav class="left" id="navLinks" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="about.html" class="active">About</a>
+      <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="journal.html" class="active">Journal</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
     <div class="center">
       <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
         <img src="1.svg" alt="" width="32" height="32">
@@ -152,7 +153,7 @@
       </div>
 
       <div class="article-nav">
-        <a href="about.html#journal">&larr; All essays</a>
+        <a href="journal.html">&larr; All essays</a>
         <a href="contact.html">Questions about a piece? &rarr;</a>
       </div>
     </section>
@@ -180,6 +181,8 @@
     <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="journal.html">Journal</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>

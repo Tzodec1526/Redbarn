@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Events | Redbarn Wood Turning — Craft Fairs & Markets</title>
 <meta name="description" content="Upcoming craft fairs, markets, and artisan shows where you can see Redbarn Wood Turning's handcrafted bowls, pens, and furniture in person in Ohio.">
-<meta name="keywords" content="craft fair, artisan market, wood turning events, Mount Vernon Ohio, Granville, Columbus, craft shows">
 <link rel="canonical" href="https://redbarnwoodturning.com/events.html">
 
 <!-- PWA Manifest -->
@@ -16,13 +15,14 @@
 <meta property="og:description" content="Find us at craft fairs and artisan markets throughout Ohio. See handcrafted bowls, pens, and furniture in person.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://redbarnwoodturning.com/events.html">
-<meta property="og:image" content="https://redbarnwoodturning.com/hero-barn.jpg">
+<meta property="og:image" content="https://redbarnwoodturning.com/og-card.jpg">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Redbarn Wood Turning Events">
 <meta name="twitter:description" content="Upcoming craft fairs and markets in Ohio. Stop by to see handcrafted woodwork in person.">
+<meta name="twitter:image" content="https://redbarnwoodturning.com/gallery-shop-banner.jpg">
 
 <!-- Structured Data: CollectionPage -->
 <script type="application/ld+json">
@@ -40,6 +40,50 @@
 }
 </script>
 
+<!-- Structured Data: Events -->
+<script type="application/ld+json">
+[
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Prairie Peddler Festival — Redbarn Wood Turning (Booth #37)",
+    "startDate": "2026-09-26T10:00-04:00",
+    "endDate": "2026-09-27T17:00-04:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Prairie Peddler Festival",
+      "address": { "@type": "PostalAddress", "streetAddress": "3170 SR 97", "addressLocality": "Butler", "addressRegion": "OH", "postalCode": "44822", "addressCountry": "US" }
+    },
+    "image": "https://redbarnwoodturning.com/gallery-shop-banner.jpg",
+    "description": "Redbarn Wood Turning at Booth #37 — hand-turned bowls, pens, and furniture at the Prairie Peddler Festival, an outdoor marketplace in the woods near Butler, Ohio.",
+    "performer": { "@type": "Organization", "name": "Redbarn Wood Turning", "url": "https://redbarnwoodturning.com" },
+    "organizer": { "@type": "Organization", "name": "Prairie Peddler Festival", "url": "https://www.prairietown.com/" },
+    "offers": { "@type": "Offer", "price": "12", "priceCurrency": "USD", "url": "https://www.prairietown.com/", "availability": "https://schema.org/InStock", "validFrom": "2026-01-01T00:00-05:00" }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "Prairie Peddler Festival — Redbarn Wood Turning (Booth #37), Weekend II",
+    "startDate": "2026-10-03T10:00-04:00",
+    "endDate": "2026-10-04T17:00-04:00",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "location": {
+      "@type": "Place",
+      "name": "Prairie Peddler Festival",
+      "address": { "@type": "PostalAddress", "streetAddress": "3170 SR 97", "addressLocality": "Butler", "addressRegion": "OH", "postalCode": "44822", "addressCountry": "US" }
+    },
+    "image": "https://redbarnwoodturning.com/gallery-shop-banner.jpg",
+    "description": "Second weekend of the Prairie Peddler Festival — find Redbarn Wood Turning at Booth #37 with hand-turned bowls, pens, and furniture.",
+    "performer": { "@type": "Organization", "name": "Redbarn Wood Turning", "url": "https://redbarnwoodturning.com" },
+    "organizer": { "@type": "Organization", "name": "Prairie Peddler Festival", "url": "https://www.prairietown.com/" },
+    "offers": { "@type": "Offer", "price": "12", "priceCurrency": "USD", "url": "https://www.prairietown.com/", "availability": "https://schema.org/InStock", "validFrom": "2026-01-01T00:00-05:00" }
+  }
+]
+</script>
+
 <!-- BreadcrumbList -->
 <script type="application/ld+json">
 {
@@ -54,17 +98,18 @@
 
 <!-- Palette init (prevents FOUC) -->
 <script>
-(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+(function(){ try { document.documentElement.classList.add('js'); var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
 </script>
 
 <!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Favicon & Theme -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#8B2500">
 
 <!-- CSS -->
@@ -79,13 +124,14 @@
 
   <!-- MASTHEAD -->
   <header class="mast" role="banner">
-    <div class="left" id="navLinks">
+    <nav class="left" id="navLinks" aria-label="Primary">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="journal.html">Journal</a>
       <a href="events.html" class="active">Events</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
     <div class="center">
       <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
         <img src="1.svg" alt="" width="32" height="32">
@@ -183,6 +229,8 @@
     <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="journal.html">Journal</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>

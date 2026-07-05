@@ -11,6 +11,14 @@ document.documentElement.classList.add('js');
 // ---- Palette toggle ----
 (function(){
   const toggle = document.getElementById('paletteToggle');
+  const themeMeta = document.querySelector('meta[name="theme-color"]');
+  const LIGHT = '#8B2500', DARK = '#1a1410';
+  function sync(){
+    const isInk = document.documentElement.dataset.palette === 'ink';
+    if (toggle) toggle.setAttribute('aria-pressed', String(isInk));
+    if (themeMeta) themeMeta.setAttribute('content', isInk ? DARK : LIGHT);
+  }
+  sync();
   if (!toggle) return;
   toggle.addEventListener('click', () => {
     const current = document.documentElement.dataset.palette || 'cream';
@@ -18,6 +26,7 @@ document.documentElement.classList.add('js');
     if (next === 'cream') delete document.documentElement.dataset.palette;
     else document.documentElement.dataset.palette = next;
     try { localStorage.setItem('redbarn-palette', next); } catch(e){}
+    sync();
   });
 })();
 

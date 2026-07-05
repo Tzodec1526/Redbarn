@@ -5,8 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Redbarn Wood Turning | Handcrafted Woodwork — Mount Vernon, Ohio</title>
 <meta name="description" content="Handcrafted bowls, pens, furniture, and custom woodwork by Michael Cedoz in Mount Vernon, Ohio. One-of-a-kind pieces shaped by hand from locally sourced hardwoods.">
-<meta name="keywords" content="wood turning, handcrafted furniture, custom woodwork, Mount Vernon Ohio, hand-turned bowls, wooden pens, live edge table, custom commission, woodworking">
-<link rel="canonical" href="https://redbarnwoodturning.com">
+<link rel="canonical" href="https://redbarnwoodturning.com/">
 
 <!-- PWA Manifest -->
 <link rel="manifest" href="manifest.json">
@@ -15,15 +14,15 @@
 <meta property="og:title" content="Redbarn Wood Turning — Handcrafted Woodwork">
 <meta property="og:description" content="One-of-a-kind bowls, pens, furniture, and custom woodwork by Michael Cedoz in Mount Vernon, Ohio.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://redbarnwoodturning.com">
-<meta property="og:image" content="https://redbarnwoodturning.com/hero-barn.jpg">
+<meta property="og:url" content="https://redbarnwoodturning.com/">
+<meta property="og:image" content="https://redbarnwoodturning.com/og-card.jpg">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Redbarn Wood Turning — Handcrafted Woodwork">
 <meta name="twitter:description" content="One-of-a-kind bowls, pens, furniture, and custom woodwork by Michael Cedoz in Mount Vernon, Ohio.">
-<meta name="twitter:image" content="https://redbarnwoodturning.com/hero-barn.jpg">
+<meta name="twitter:image" content="https://redbarnwoodturning.com/og-card.jpg">
 
 <!-- Structured Data: LocalBusiness -->
 <script type="application/ld+json">
@@ -63,6 +62,10 @@
     "availableLanguage": "English"
   },
   "areaServed": [
+    { "@type": "City", "name": "Mount Vernon, Ohio" },
+    { "@type": "City", "name": "Columbus, Ohio" },
+    { "@type": "AdministrativeArea", "name": "Knox County, Ohio" },
+    { "@type": "AdministrativeArea", "name": "Central Ohio" },
     { "@type": "State", "name": "Ohio" },
     { "@type": "Country", "name": "United States" }
   ],
@@ -80,7 +83,7 @@
   "sameAs": [
     "https://www.facebook.com/redbarnwoodturning/"
   ],
-  "priceRange": "$",
+  "priceRange": "$$",
   "makesOffer": [
     { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Hand-Turned Bowls" } },
     { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Handcrafted Pens" } },
@@ -116,11 +119,12 @@
 <!-- Preconnect & Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <!-- Favicon & Theme -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="theme-color" content="#8B2500">
 
 <!-- CSS -->
@@ -135,13 +139,14 @@
 
   <!-- MASTHEAD -->
   <header class="mast" role="banner">
-    <div class="left" id="navLinks">
+    <nav class="left" id="navLinks" aria-label="Primary">
       <a href="index.html" class="active">Home</a>
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="journal.html">Journal</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
-    </div>
+    </nav>
     <div class="center">
       <a href="index.html" class="wordmark" aria-label="Redbarn Wood Turning — Home">
         <img src="1.svg" alt="" width="32" height="32">
@@ -167,7 +172,7 @@
     <section class="hero">
       <div class="hero-bg" aria-hidden="true">
         <picture>
-          <source srcset="hero-barn-watercolor.webp" type="image/webp">
+          <source type="image/webp" srcset="hero-barn-watercolor-600.webp 600w, hero-barn-watercolor-900.webp 900w, hero-barn-watercolor.webp 1168w" sizes="100vw">
           <img src="hero-barn-watercolor.png" alt="" width="1168" height="880" fetchpriority="high">
         </picture>
         <div class="hero-veil"></div>
@@ -345,7 +350,7 @@
     <section class="workshop-banner reveal" aria-label="A view from the workshop">
       <picture>
         <source srcset="gallery-shop-banner.webp" type="image/webp">
-        <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations lined up in the Redbarn workshop with the Redbarn Wood Turning banner" class="workshop-banner-img" loading="lazy">
+        <img src="gallery-shop-banner.jpg" alt="Three outdoor kitchen stations lined up in the Redbarn workshop with the Redbarn Wood Turning banner" class="workshop-banner-img" width="1168" height="880" loading="lazy">
       </picture>
       <div class="workshop-banner-overlay">
         <span class="mono">A view from the shop</span>
@@ -400,7 +405,7 @@
             <p>Tables, consoles, and statement pieces that warm a room and hold a family.</p>
           </div>
         </a>
-        <a class="strip-card reveal" href="contact.html">
+        <a class="strip-card reveal" href="commissions.html">
           <div class="sc-img">
             <picture>
               <source srcset="craft-custom.webp" type="image/webp">
@@ -453,11 +458,58 @@
       </div>
     </section>
 
+    <!-- FROM THE JOURNAL -->
+    <section class="journal" id="journal-preview">
+      <div class="journal-head reveal">
+        <span class="mono">&sect; 05 &mdash; From the journal</span>
+        <h3>Notes on <em>wood &amp; craft</em>.</h3>
+      </div>
+      <div class="blog-grid journal-preview-grid">
+        <a href="blog-five-trees-of-knox-county.html" class="blog-card reveal" aria-label="Five Trees of Knox County: A Field Guide to the Hardwoods of Mount Vernon, Ohio">
+          <div class="blog-card-image">
+            <picture>
+              <source srcset="gallery-bowl-group.webp" type="image/webp">
+              <img src="gallery-bowl-group.jpg" alt="Six hand-turned bowls in maple, cherry, and walnut on the workshop floor" loading="lazy" width="400" height="250">
+            </picture>
+          </div>
+          <div class="blog-card-date">May 2026 &middot; Field notes</div>
+          <h4 class="blog-card-title">Five trees of Knox County &mdash; a field guide</h4>
+          <p class="blog-card-excerpt">Black walnut, white oak, cherry, sugar maple, sycamore &mdash; and what each one teaches a maker working out of a barn in Mount Vernon.</p>
+          <span class="blog-read-more">Read the essay &rarr;</span>
+        </a>
+        <a href="blog-sawstop-lesson.html" class="blog-card reveal" aria-label="Forty-Five Years, One Bad Second: Why I Finally Bought a SawStop">
+          <div class="blog-card-image">
+            <picture>
+              <source srcset="gallery-shop-banner.webp" type="image/webp">
+              <img src="gallery-shop-banner.jpg" alt="The Redbarn workshop floor" loading="lazy" width="400" height="250">
+            </picture>
+          </div>
+          <div class="blog-card-date">April 2026 &middot; Shop safety</div>
+          <h4 class="blog-card-title">Forty-five years, one bad second</h4>
+          <p class="blog-card-excerpt">Forty-five years at the lathe, one bad second on the table saw, and the saw I should have owned twenty years ago.</p>
+          <span class="blog-read-more">Read the essay &rarr;</span>
+        </a>
+        <a href="blog-fallen-tree-to-bowl.html" class="blog-card reveal" aria-label="From Fallen Tree to Finished Bowl: The 18-Month Journey of a Walnut">
+          <div class="blog-card-image">
+            <picture>
+              <source srcset="gallery-raw-log.webp" type="image/webp">
+              <img src="gallery-raw-log.jpg" alt="Raw black walnut log on the workshop floor" loading="lazy" width="400" height="250">
+            </picture>
+          </div>
+          <div class="blog-card-date">April 2026 &middot; The process</div>
+          <h4 class="blog-card-title">From fallen tree to finished bowl</h4>
+          <p class="blog-card-excerpt">A single black walnut from a Knox County backyard &mdash; and the reason a good bowl takes more than a year to make.</p>
+          <span class="blog-read-more">Read the essay &rarr;</span>
+        </a>
+      </div>
+      <p class="journal-preview-more reveal"><a class="btn ghost" href="journal.html">Read the journal <span class="arr">&rarr;</span></a></p>
+    </section>
+
     <!-- CONTACT CTA -->
     <section class="contact" id="contact">
       <div class="inner">
         <div>
-          <span class="mono">&sect; 05 &mdash; Correspondence</span>
+          <span class="mono">&sect; 06 &mdash; Correspondence</span>
           <h2>Tell me about the <em>tree,</em><br>or the <span class="barn">room</span> it's headed for.</h2>
         </div>
         <div class="side reveal">
@@ -469,7 +521,7 @@
       <div class="inner addr">
         <div class="block">
           <span class="mono">Workshop</span>
-          <span class="v">A red barn on a county road<br><em>Mount Vernon, Ohio 43050</em></span>
+          <span class="v">A red barn on a county road<br><em>Mount Vernon, Ohio 43050</em><br><em>Serving Columbus &amp; central Ohio</em></span>
         </div>
         <div class="block">
           <span class="mono">Visiting hours</span>
@@ -477,7 +529,7 @@
         </div>
         <div class="block">
           <span class="mono">Elsewhere</span>
-          <span class="v"><a href="https://www.facebook.com/redbarnwoodturning/" target="_blank" rel="noopener noreferrer">Facebook &middot; @redbarnwoodturning</a><br><em>Journal &mdash; updated monthly</em></span>
+          <span class="v"><a href="https://www.facebook.com/redbarnwoodturning/" target="_blank" rel="noopener noreferrer">Facebook &middot; @redbarnwoodturning</a><br><a href="journal.html">Journal &mdash; updated monthly</a></span>
         </div>
       </div>
     </section>
@@ -492,6 +544,8 @@
     <div class="lf">
       <a href="about.html">About</a>
       <a href="gallery.html">Gallery</a>
+      <a href="commissions.html">Commissions</a>
+      <a href="journal.html">Journal</a>
       <a href="events.html">Events</a>
       <a href="contact.html">Contact</a>
     </div>
