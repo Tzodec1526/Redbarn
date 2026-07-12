@@ -65,6 +65,33 @@ document.documentElement.classList.add('js');
   });
 })();
 
+// ---- Hero parallax (desktop pointers only, honors reduced motion) ----
+(function(){
+  const hero = document.querySelector('.hero');
+  const bg = document.querySelector('.hero-bg');
+  if (!hero || !bg) return;
+  if (!matchMedia('(pointer: fine)').matches) return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+  const MAX = 10; // px of drift at the edges
+  let raf = 0;
+  hero.addEventListener('mousemove', (e) => {
+    if (raf) return;
+    raf = requestAnimationFrame(() => {
+      raf = 0;
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      bg.style.setProperty('--par-x', (-x * MAX).toFixed(2));
+      bg.style.setProperty('--par-y', (-y * MAX).toFixed(2));
+    });
+  });
+  hero.addEventListener('mouseleave', () => {
+    bg.style.setProperty('--par-x', 0);
+    bg.style.setProperty('--par-y', 0);
+  });
+})();
+
 // ---- Footer year ----
 (function(){
   const year = document.getElementById('year');
