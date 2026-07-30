@@ -16,6 +16,9 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://redbarnwoodturning.com/">
 <meta property="og:image" content="https://redbarnwoodturning.com/og-card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Watercolor of a red gambrel-roofed barn among autumn trees — Redbarn Wood Turning, Mount Vernon, Ohio">
 <meta property="og:locale" content="en_US">
 
 <!-- Twitter Card -->
@@ -97,23 +100,10 @@
 }
 </script>
 
-<!-- BreadcrumbList -->
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [{
-    "@type": "ListItem",
-    "position": 1,
-    "name": "Home",
-    "item": "https://redbarnwoodturning.com/"
-  }]
-}
-</script>
 
 <!-- Palette init (prevents FOUC) -->
 <script>
-(function(){ try { document.documentElement.classList.add('js'); var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p !== 'cream') document.documentElement.dataset.palette = 'ink'; } catch(e){ document.documentElement.dataset.palette = 'ink'; } })();
 </script>
 
 <!-- Preconnect & Fonts -->
@@ -123,9 +113,10 @@
 
 <!-- Favicon & Theme -->
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
+<link rel="icon" href="favicon.ico" sizes="32x32">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#8B2500">
+<meta name="theme-color" content="#1a1410">
 
 <!-- CSS -->
 <link rel="stylesheet" href="styles.css">
@@ -166,88 +157,42 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
 
-    <!-- HERO — full-bleed watercolor, editorial overlay -->
+    <!-- HERO — full-bleed watercolor, calm editorial -->
     <section class="hero">
       <div class="hero-bg" aria-hidden="true">
         <picture>
           <source type="image/webp" srcset="hero-barn-watercolor-600.webp 600w, hero-barn-watercolor-900.webp 900w, hero-barn-watercolor.webp 1168w" sizes="100vw">
-          <img src="hero-barn-watercolor.png" alt="" width="1168" height="880" fetchpriority="high">
+          <img src="hero-barn-watercolor.jpg" alt="" width="1168" height="880" fetchpriority="high">
         </picture>
         <div class="hero-veil"></div>
       </div>
 
-      <div class="hero-frame-tag" aria-hidden="true">
-        <span class="tag">Plate I</span>
-        <span>The workshop &mdash; Mount Vernon</span>
-      </div>
-
-      <div class="hero-stamp" aria-hidden="true">
-        <img src="1.svg" alt="">
-      </div>
-
-      <div class="hero-pencil" aria-hidden="true">
-        en plein air<small>Knox County &middot; autumn</small>
-      </div>
-
-      <div class="hero-seal" aria-hidden="true">
-        <svg viewBox="0 0 128 128">
-          <defs>
-            <path id="seal-ring" d="M 64,64 m -53,0 a 53,53 0 1,1 106,0 a 53,53 0 1,1 -106,0" fill="none"/>
-          </defs>
-          <text><textPath href="#seal-ring">REDBARN WOOD TURNING &#183; MOUNT VERNON, OHIO &#183;</textPath></text>
-        </svg>
-        <img src="1.svg" alt="" width="52" height="52" loading="lazy">
-      </div>
-
       <div class="hero-inner">
-        <div class="eyebrow reveal">
-          <span class="bar"></span>
-          <span>Est. the slow way &nbsp;&middot;&nbsp; Knox County</span>
-          <span class="barn">&numero; 041 &mdash; Mount Vernon, Ohio</span>
-        </div>
+        <p class="hero-brand reveal">
+          <em>Redbarn</em>
+          <span class="hero-brand-sub">Wood Turning</span>
+        </p>
 
         <h1 class="hero-title reveal">
-          <span class="line"><span>Wood with a</span></span>
-          <span class="line"><span><span class="i">memory,</span><span class="amp"> &amp; </span></span></span>
-          <span class="line"><span>hands that</span></span>
-          <span class="line"><span class="i">listen.</span></span>
+          Wood with a <span class="i">memory,</span><br>
+          hands that <span class="i">listen.</span>
         </h1>
 
         <p class="hero-lede reveal">
-          Michael Cedoz &mdash; a one-man shop in Knox County, turning storm-felled Ohio hardwoods into bowls, pens, tables, and commissions meant to outlive the maker.
+          Hand-turned bowls, pens, furniture, and commissions from storm-felled Ohio hardwoods &mdash; made one at a time in Mount Vernon.
         </p>
 
         <div class="cta-row reveal">
           <a class="btn" href="contact.html">Start a conversation <span class="arr">&rarr;</span></a>
           <a class="btn ghost" href="about.html">Read the story</a>
         </div>
-
-        <div class="hero-meta reveal">
-          <div class="block">
-            <span class="mono">Maker</span>
-            <span class="v">Michael Cedoz &mdash;<br><em>sole proprietor</em></span>
-          </div>
-          <div class="block">
-            <span class="mono">Shop</span>
-            <span class="v">Mount Vernon,<br>Ohio</span>
-          </div>
-          <div class="block">
-            <span class="mono">Method</span>
-            <span class="v">Hand tools,<br>slow finishes</span>
-          </div>
-        </div>
       </div>
-
-      <a class="hero-scroll" href="#about" aria-label="Scroll to content">
-        <span class="mono">Scroll</span>
-        <span class="scroll-line" aria-hidden="true"></span>
-      </a>
     </section>
 
-    <!-- RIBBON -->
-    <div class="ribbon" aria-hidden="true">
+    <!-- PRODUCT LINE — static -->
+    <div class="ribbon" aria-label="Work offered">
       <div class="ribbon-track">
         <span class="item">Bowls</span><span class="sep">&middot;</span>
         <span class="item"><em>Live-edge tables</em></span><span class="sep">&middot;</span>
@@ -256,19 +201,7 @@
         <span class="item">Smoking pipes</span><span class="sep">&middot;</span>
         <span class="item"><em>Commissions</em></span><span class="sep">&middot;</span>
         <span class="item">Candle sticks</span><span class="sep">&middot;</span>
-        <span class="item"><em>Salt &amp; pepper</em></span><span class="sep">&middot;</span>
-        <span class="item">Heirloom boxes</span><span class="sep">&middot;</span>
-        <span class="item"><em>Kitchen tables</em></span><span class="sep">&middot;</span>
-        <span class="item">Bowls</span><span class="sep">&middot;</span>
-        <span class="item"><em>Live-edge tables</em></span><span class="sep">&middot;</span>
-        <span class="item">Turned pens</span><span class="sep">&middot;</span>
-        <span class="item"><em>Bottle stoppers</em></span><span class="sep">&middot;</span>
-        <span class="item">Smoking pipes</span><span class="sep">&middot;</span>
-        <span class="item"><em>Commissions</em></span><span class="sep">&middot;</span>
-        <span class="item">Candle sticks</span><span class="sep">&middot;</span>
-        <span class="item"><em>Salt &amp; pepper</em></span><span class="sep">&middot;</span>
-        <span class="item">Heirloom boxes</span><span class="sep">&middot;</span>
-        <span class="item"><em>Kitchen tables</em></span><span class="sep">&middot;</span>
+        <span class="item"><em>Salt &amp; pepper</em></span>
       </div>
     </div>
 
@@ -467,7 +400,7 @@
       </div>
       <div class="testimonials-grid">
         <figure class="testimonial reveal">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote class="testimonial-quote">When our son was born, we wanted something truly special for his nursery. Michael crafted a beautiful bassinette that's as sturdy as it is gorgeous. Knowing it was made by hand makes it that much more meaningful &mdash; this is something we'll pass down for generations.</blockquote>
           <figcaption class="testimonial-footer">
             <span class="testimonial-attr">Tim F.</span>
@@ -476,7 +409,7 @@
           <span class="testimonial-product">Custom bassinette</span>
         </figure>
         <figure class="testimonial reveal">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote class="testimonial-quote">We'd been searching for a kitchen table that felt like the heart of the home, and Michael delivered exactly that. The oak is absolutely stunning &mdash; the grain, the finish, the craftsmanship. Every time we sit down for dinner, someone comments on how beautiful it is.</blockquote>
           <figcaption class="testimonial-footer">
             <span class="testimonial-attr">Tom C.</span>
@@ -485,7 +418,7 @@
           <span class="testimonial-product">Oak kitchen table</span>
         </figure>
         <figure class="testimonial reveal">
-          <div class="testimonial-stars" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <div class="testimonial-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote class="testimonial-quote">Found Redbarn's Mud Kitchen on Facebook and knew right away the grandchildren would adore it. A quick Venmo, a friendly pickup at the workshop, and the kids have barely come inside since. Exceptional craftsmanship &mdash; every joint solid, every edge smoothed &mdash; and Mike was a pleasure to work with from first message to handoff.</blockquote>
           <figcaption class="testimonial-footer">
             <span class="testimonial-attr">Laura B.</span>
@@ -518,8 +451,8 @@
         <a href="blog-sawstop-lesson.html" class="blog-card reveal" aria-label="Forty-Five Years, One Bad Second: Why I Finally Bought a SawStop">
           <div class="blog-card-image">
             <picture>
-              <source srcset="gallery-shop-banner.webp" type="image/webp">
-              <img src="gallery-shop-banner.jpg" alt="The Redbarn workshop floor" loading="lazy" width="400" height="250">
+              <source srcset="gallery-oak-grain.webp" type="image/webp">
+              <img src="gallery-oak-grain.jpg" alt="Oak tabletop with swirling grain in the Redbarn finishing room" loading="lazy" width="400" height="250">
             </picture>
           </div>
           <div class="blog-card-date">April 2026 &middot; Shop safety</div>
@@ -528,7 +461,7 @@
           <span class="blog-read-more">Read the essay &rarr;</span>
         </a>
         <a href="blog-fallen-tree-to-bowl.html" class="blog-card reveal" aria-label="From Fallen Tree to Finished Bowl: The 18-Month Journey of a Walnut">
-          <div class="blog-card-image">
+          <div class="blog-card-image focal-top">
             <picture>
               <source srcset="gallery-raw-log.webp" type="image/webp">
               <img src="gallery-raw-log.jpg" alt="Raw black walnut log on the workshop floor" loading="lazy" width="400" height="250">

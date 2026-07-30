@@ -68,7 +68,7 @@
 
 <!-- Palette init (prevents FOUC) -->
 <script>
-(function(){ try { document.documentElement.classList.add('js'); var p = localStorage.getItem('redbarn-palette'); if (p && p !== 'cream') document.documentElement.dataset.palette = p; } catch(e){} })();
+(function(){ try { var p = localStorage.getItem('redbarn-palette'); if (p !== 'cream') document.documentElement.dataset.palette = 'ink'; } catch(e){ document.documentElement.dataset.palette = 'ink'; } })();
 </script>
 
 <!-- Fonts -->
@@ -80,7 +80,7 @@
 <link rel="alternate" type="application/rss+xml" title="Redbarn Wood Turning Blog" href="feed.xml">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
-<meta name="theme-color" content="#8B2500">
+<meta name="theme-color" content="#1a1410">
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -118,7 +118,7 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="main" tabindex="-1">
 
     <section class="page-header">
       <span class="mono reveal">&sect; Journal &mdash; Living with wood</span>
